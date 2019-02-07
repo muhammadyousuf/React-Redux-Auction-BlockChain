@@ -5,8 +5,11 @@ const reducer = (state = {}, action) => {
         }
         case 'REMOVE_PRODUCT': {
             return { ...state, product: null }
-
+        }
+        default:{
+            return state;
         }
     }
 
 }
+export default reducer;
