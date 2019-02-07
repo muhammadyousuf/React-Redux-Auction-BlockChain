@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
-import Signup from './Components/Signup/Screen';
+import AddProduct from './Components/AddProduct/Screen';
 import Login from './Components/Login/Screen';
 import { Provider } from 'react-redux';
 import store from './Store/store';
@@ -14,7 +14,7 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route exact component={Login} path="/" />
-            <Route exact component={Signup} path="/Signup" />
+            <Route exact component={AddProduct} path="/AddProduct" />
           </Switch>
         </BrowserRouter>
       </Provider>

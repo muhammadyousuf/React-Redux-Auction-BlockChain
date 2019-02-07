@@ -1,7 +1,7 @@
- const addProduct = (data) => {
+ const addProduct = (product) => {
     return{
         type: 'ADD_PRODUCT',
-        data
+        product
     }
 
 }
@@ -11,8 +11,8 @@ const removeProduct = () => {
         type: 'REMOVE_PRODUCT',
     }
 
-}
-export {
+ }
+export  {
     addProduct,
     removeProduct
 }
