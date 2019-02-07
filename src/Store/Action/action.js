@@ -1,4 +1,4 @@
-export const addProduct = (data) => {
+ const addProduct = (data) => {
     return{
         type: 'ADD_PRODUCT',
         data
@@ -6,9 +6,13 @@ export const addProduct = (data) => {
 
 }
 
-export const removeProduct = () => {
+const removeProduct = () => {
     return{
         type: 'REMOVE_PRODUCT',
     }
 
+}
+export {
+    addProduct,
+    removeProduct
 }
