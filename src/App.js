@@ -4,6 +4,7 @@ import AddProduct from './Components/AddProduct/Screen';
 import List from './Components/List/Screen';
 import { Provider } from 'react-redux';
 import store from './Store/store';
+import DemoCarousel from './Components/Slider/Slider';
 
 import './App.css';
 
@@ -11,16 +12,17 @@ class App extends Component {
   render() {
     return (
       <Provider store={store} >
-        {/* <BrowserRouter>
+        <BrowserRouter>
           <Switch>
             <Route exact component={List} path="/" />
+            <Route exact component={DemoCarousel} path="/DemoCarousel" />
             <Route exact component={AddProduct} path="/AddProduct" />
           </Switch>
-        </BrowserRouter> */}
-        <div>
+        </BrowserRouter>
+        {/* <div>
           <AddProduct />
           <List />
-        </div>
+        </div> */}
       </Provider>
     );
   }
