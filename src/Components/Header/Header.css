@@ -1,5 +1,5 @@
 .HeaderColor{
-    background-color: rgb(104, 104, 199);
+    background-color: #33648D;
 }
 .headerTitle{
     color: white;
@@ -7,6 +7,7 @@
     cursor: pointer;
     font-size: 20px;
     margin-right: 20px;
+   
     
 }
 .toggle{

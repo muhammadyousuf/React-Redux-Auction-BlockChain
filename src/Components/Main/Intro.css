@@ -1,0 +1,47 @@
+.heading{
+    color:#205786;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+.mainHeader{
+    color: #004079;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+.subHeader{
+    color:#3D6D99;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 3%;
+    margin-bottom: 7%;
+}
+.des{
+    color: rgb(62, 121, 177);
+    font-size: 14px;
+}
+.bgImage{
+    background-image: url('https://www.auctionity.com/wp-content/uploads/2018/09/Capture-d%E2%80%99%C3%A9cran-2018-09-10-%C3%A0-11.36.49.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+.startSubHeader{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 38px;
+    color: white;
+    font-weight: 600px;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+.startHeader{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: white;
+    margin-top: 5%;
+    font-weight: bold;
+    margin-left: 5%;
+}
