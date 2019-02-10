@@ -7,15 +7,59 @@ class Footer extends Component {
         return (
             <div className="container-fuild"  >
                 <div className="footerTop"  ></div>
-                <div className="row"  >
+                <div  >
+                    <div className="row"  >
 
+                        <div className="superFooter">
+                            <div className="row">
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-3330.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                  <img src="https://www.auctionity.com/wp-content/uploads/2018/09/groupe-33.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-336.png" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" alt="" />
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-339.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-334.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-345.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <p className="paraStyle" >Trustless</p>
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <p className="paraStyle">Real-time auctions</p>
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <p className="paraStyle">Open source</p>
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <p className="paraStyle">Community auctions</p>
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <p className="paraStyle">Free</p>
+                                </div>
+                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <p className="paraStyle">Live video</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="footer">
                         <div className="row" >
                             <div className="col-md-3 col-xs-3 col-sm-3 col-xl-3 col-lg-3">
                                 <img src="https://www.auctionity.com/wp-content/uploads/2018/09/m%C3%A9daille_NFT.png" alt="" className="imgIcon" />
                             </div>
                             <div className="col-md-3 col-xs-3 col-sm-3 col-xl-3 col-lg-3" >
-                                <h1 className="footerHeaging " >Customer Service</h1>
+                                <h1 className="footerHeaging" >Customer Service</h1>
                                                             </div>
                             <div className="col-md-3 col-xs-3 col-sm-3 col-xl-3 col-lg-3">
                                 <h1 className="footerHeaging"  >About US</h1>

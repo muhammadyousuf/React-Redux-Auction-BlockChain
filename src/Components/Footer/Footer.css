@@ -1,13 +1,13 @@
 .footer{
-	width: 99%;
-	background-color: #33648D;
+	width: 100%;
+	background-color: whitesmoke;
 	margin-left: 0%;
 	margin-top: 1%;
 
 }
 
 .list{
-	color: rgb(221, 213, 213);
+	color: rgb(62, 121, 177);
 	margin-left: 0%;
 	list-style: none;
 	padding: 4px;
@@ -15,7 +15,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .footerHeaging{
-    color: beige;
+    color: rgb(62, 121, 177);
     font-family: 'Times New Roman', Times, serif;
     margin-left: 5%;
     padding-left: 16px;
@@ -30,8 +30,25 @@
     margin-top: 4%;
 }
 .footerPara{
-    color: white;
+    color: rgb(62, 121, 177);
     font-family: 'Times New Roman', Times, serif;
     padding-left: 50px;
     margin-top: 10%;
+}
+.superFooter{
+    height: 250px;
+    width: 100%;
+    padding-top: 20px;
+    background-color: #33648D;;
+}
+.imageIconStyle{
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.paraStyle{
+    color: wheat;
+    margin-left: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin-top: 20px;
 }

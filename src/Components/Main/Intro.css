@@ -23,6 +23,9 @@
     color: rgb(62, 121, 177);
     font-size: 14px;
 }
+.main{
+    overflow-x: hidden;
+}
 .bgImage{
     background-image: url('https://www.auctionity.com/wp-content/uploads/2018/09/Capture-d%E2%80%99%C3%A9cran-2018-09-10-%C3%A0-11.36.49.jpg');
     background-repeat: no-repeat;

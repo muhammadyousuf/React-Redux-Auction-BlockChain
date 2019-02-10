@@ -10,7 +10,7 @@ import './Intro.css'
 class MainPage extends Component {
     render() {
         return (
-            <div className="container-fuild"   >
+            <div className="container-fuild main "   >
                <div className="bgImage" >
                 <Header />
                 <Start />
