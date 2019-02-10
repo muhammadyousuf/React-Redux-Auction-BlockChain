@@ -5,10 +5,10 @@ import './Footer.css';
 class Footer extends Component {
     render() {
         return (
-            <div className="container-fuild  ">
-                <div className="footerTop" ></div>
-                <div className="row">
-                    <div className="row">
+            <div className="container-fuild"  >
+                <div className="footerTop"  ></div>
+                <div className="row"  >
+                    
                         <div className="footer">
                             <div className="row" >
                                 <div className="col-md-4 col-xs-4 col-sm-4 col-xl-4 col-lg-4" >
@@ -56,7 +56,6 @@ class Footer extends Component {
                     </div>
                 </div>
 
-            </div>
         );
     }
 }

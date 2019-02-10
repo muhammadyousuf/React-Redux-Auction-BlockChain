@@ -1,8 +1,11 @@
 .HeaderColor{
-    background-color: rgb(100, 100, 230);
+    background-color: rgb(104, 104, 199);
 }
 .headerTitle{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
+    font-size: 18px;
+    margin-right: 20px;
+    font-weight: bolder;
 }

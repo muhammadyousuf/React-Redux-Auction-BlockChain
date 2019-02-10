@@ -4,42 +4,51 @@ import './Header.css';
 
 
 class Header extends Component {
-    constructor(props){
-    super(props);
-    this.state = {
-        token:''
-    }
+    constructor(props) {
+        super(props);
+        this.state = {
+            token: ''
+        }
 
     }
-    componentWillMount(){
+    componentWillMount() {
         let key;
         key = localStorage.getItem('token');
-        this.setState({token:key}, ()=>{
+        this.setState({ token: key }, () => {
             console.log(this.state.token)
         })
     }
+
     render() {
         return (
-            
-            <div  className="container-fuild HeaderColor" >
-                <Navbar >
-                    <Nav className="mr-auto">
-                    {this.state.token === '' || this.state.token === null ?
-                        <span>
-                            
-                            <Navbar.Brand  className="headerTitle" >Login</Navbar.Brand>
-                            <Navbar.Brand  className="headerTitle" >About</Navbar.Brand>
-                        </span>:
-                        <span>
-                            <Navbar.Brand  className="headerTitle" >Home</Navbar.Brand>
-                            <Navbar.Brand  className="headerTitle" >Dashboard</Navbar.Brand>
-                            <Navbar.Brand  className="headerTitle" >Add Auction</Navbar.Brand>
-                            <Navbar.Brand  className="headerTitle" >My Auction</Navbar.Brand>
-                            <Navbar.Brand  className="headerTitle" >History</Navbar.Brand>
-                        </span>
-                    }
-                    </Nav>
-                </Navbar>  </div>
+            <div className="container-fuild HeaderColor" >
+                <Navbar collapseOnSelect expand="lg" variant="dark">
+
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        {this.state.token === '' || this.state.token === null ?
+                            <span>
+                                <Nav className="mr-auto"  >
+                                <Nav.Link className="headerTitle" >Login</Nav.Link>
+                                <Nav.Link className="headerTitle" >About</Nav.Link>
+                                </Nav>
+                            </span> :
+                            <span>
+                                <Nav className="mr-auto">
+                                    <Nav.Link className="headerTitle" >Home</Nav.Link>
+                                    <Nav.Link className="headerTitle" >Dashboard</Nav.Link>
+                                    <Nav.Link className="headerTitle" >Add Auction</Nav.Link>
+
+                                </Nav>
+                                <Nav>
+                                    <Nav.Link className="headerTitle">My Auction</Nav.Link>
+                                    <Nav.Link eventKey={2} className="headerTitle"> History </Nav.Link>
+                                </Nav>
+                            </span>
+                        }
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
 
         );
     }
