@@ -1,0 +1,8 @@
+.HeaderColor{
+    background-color: rgb(100, 100, 230);
+}
+.headerTitle{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
