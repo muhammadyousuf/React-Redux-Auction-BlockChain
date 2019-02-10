@@ -1,0 +1,30 @@
+.footer{
+	width: 98%;
+
+	background-color: rgb(64, 64, 221);
+	margin-left: 2%;
+	margin-top: 1%;
+
+}
+
+
+.list{
+	color: rgb(221, 213, 213);
+	margin-left: 0%;
+	list-style: none;
+	padding: 4px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footerHeaging{
+    color: beige;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 5%;
+    padding-left: 16px;
+    padding-right: 20px;
+    font-size: 28px;
+}
+.footerTop{
+    margin-top: 400px;
+}
+
