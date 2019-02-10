@@ -15,7 +15,7 @@ class MainPage extends Component {
                 <Header />
                 <Start />
                 </div>
-                <div className="row" >
+                <div className="row sliderTop"  >
                     <div className="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12" >
                         <DemoCarousel />
                     
