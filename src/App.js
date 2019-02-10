@@ -4,18 +4,15 @@ import AddProduct from './Components/AddProduct/Screen';
 import List from './Components/List/Screen';
 import { Provider } from 'react-redux';
 import store from './Store/store';
-
-import Header from './Components/Header/Header';
 import './App.css';
-
 import MainPage from './Components/Main/Main';
-import Footer from './Components/Footer/Footer';
+
 
 class App extends Component {
   render() {
     return (
       <Provider store={store} >
-        <Header />
+        
         <BrowserRouter>
           <Switch>
             <Route exact component={MainPage} path="/" />
@@ -27,7 +24,7 @@ class App extends Component {
           <AddProduct />
           <List />
         </div> */}
-        <Footer />
+        
       </Provider>
     );
   }

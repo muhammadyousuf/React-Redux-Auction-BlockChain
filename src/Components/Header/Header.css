@@ -5,7 +5,14 @@
     color: white;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     margin-right: 20px;
-    font-weight: bolder;
+    
+}
+.toggle{
+    border: solid;
+    border-color: white;
+    font-variant: inherit;
+    background-image: url("line.png");
+    background-repeat: no-repeat;
 }

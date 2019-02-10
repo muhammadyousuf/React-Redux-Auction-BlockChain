@@ -22,9 +22,9 @@ class Header extends Component {
     render() {
         return (
             <div className="container-fuild HeaderColor" >
-                <Navbar collapseOnSelect expand="lg" variant="dark">
+                <Navbar collapseOnSelect expand="lg" variant="outline-info">
 
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" className="toggle" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         {this.state.token === '' || this.state.token === null ?
                             <span>
