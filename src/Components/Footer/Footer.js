@@ -11,46 +11,33 @@ class Footer extends Component {
                     <div className="row"  >
 
                         <div className="superFooter">
-                            <div className="row">
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                            <div className="row justify-content-center">
+                                <div className="col-md-2 col-sm-3 col-xs-5" >
                                 <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-3330.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
-                                </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
-                                  <img src="https://www.auctionity.com/wp-content/uploads/2018/09/groupe-33.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
-                                </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
-                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-336.png" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" alt="" />
-                                </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
-                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-339.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
-                                </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
-                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-334.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
-                                </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
-                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-345.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
                                 <p className="paraStyle" >Trustless</p>
                                 </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
-                                <p className="paraStyle">Real-time auctions</p>
+                                <div className="col-md-2 col-sm-3 col-xs-5" >
+                                  <img src="https://www.auctionity.com/wp-content/uploads/2018/09/groupe-33.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
+                                  <p className="paraStyle">Real-time auctions</p>
                                 </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <div className="col-md-2 col-sm-3 col-xs-5" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-336.png" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" alt="" />
                                 <p className="paraStyle">Open source</p>
                                 </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <div className="col-md-2 col-sm-3 col-xs-5" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-339.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
                                 <p className="paraStyle">Community auctions</p>
                                 </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <div className="col-md-2 col-sm-3 col-xs-5" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-334.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
                                 <p className="paraStyle">Free</p>
                                 </div>
-                                <div className="col-md-2 col-xs-2 col-sm-2 col-xl-2 col-lg-2" >
+                                <div className="col-md-2 col-sm-3 col-xs-5" >
+                                <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-345.png" alt="" className="alignnone size-full wp-image-185 aligncenter imageIconStyle" />
                                 <p className="paraStyle">Live video</p>
                                 </div>
                             </div>
+                           
                         </div>
                     </div>
                     <div className="footer">

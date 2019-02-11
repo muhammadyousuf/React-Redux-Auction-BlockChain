@@ -51,7 +51,7 @@
 .paperDiv{
     background-color: whitesmoke;
     height: 350px;
-    margin-left: 70px;
+    /* margin-left: 70px; */
     border-top: solid 10px #8AC78E;
 
 }
@@ -61,7 +61,7 @@
 .paperDivTwo{
     background-color: whitesmoke;
     height: 350px;
-    margin-left: 70px;
+    /* margin-left: 70px; */
     border-top: solid 10px #1C7894;
 }
 
