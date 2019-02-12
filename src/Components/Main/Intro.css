@@ -50,23 +50,25 @@
 }
 .paperDiv{
     background-color: whitesmoke;
-    height: 350px;
+    height: 400px;
     /* margin-left: 70px; */
     border-top: solid 10px #8AC78E;
+    border-left: solid 10px #8AC78E;
 
 }
 .topStyle{
-    margin-top: 460px;
+    margin-top: 560px;
 }
 .paperDivTwo{
     background-color: whitesmoke;
-    height: 350px;
+    height: 400px;
     /* margin-left: 70px; */
     border-top: solid 10px #1C7894;
+    border-left: solid 10px #1C7894;
 }
 
 .sliderTop{
-    margin-top: 450px;
+    margin-top: 250px;
 }
 .divHeader{
     font-family: 'Times New Roman', Times, serif;
