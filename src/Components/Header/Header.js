@@ -18,6 +18,10 @@ class Header extends Component {
             console.log(this.state.token)
         })
     }
+    myAuction(){
+        console.log(this.props.history)
+       // this.props.history.push('MyAuction')
+    }
 
     render() {
         return (
@@ -29,19 +33,20 @@ class Header extends Component {
                         {this.state.token === '' || this.state.token === null ?
                             <span>
                                 <Nav className="mr-auto"  >
+                                <Nav.Link href="/Home" className="headerTitle" >Home</Nav.Link>
                                 <Nav.Link className="headerTitle" >Login</Nav.Link>
                                 <Nav.Link className="headerTitle" >About</Nav.Link>
                                 </Nav>
                             </span> :
                             <span>
                                 <Nav className="mr-auto">
-                                    <Nav.Link className="headerTitle" >Home</Nav.Link>
+                                    <Nav.Link href="/Home" className="headerTitle" >Home</Nav.Link>
                                     <Nav.Link className="headerTitle" >Dashboard</Nav.Link>
-                                    <Nav.Link className="headerTitle" >Add Auction</Nav.Link>
+                                    <Nav.Link href="MyAuction" className="headerTitle" >Add Auction</Nav.Link>
 
                                 </Nav>
                                 <Nav>
-                                    <Nav.Link className="headerTitle">My Auction</Nav.Link>
+                                    <Nav.Link  className="headerTitle">My Auction</Nav.Link>
                                     <Nav.Link eventKey={2} className="headerTitle"> History </Nav.Link>
                                 </Nav>
                             </span>
