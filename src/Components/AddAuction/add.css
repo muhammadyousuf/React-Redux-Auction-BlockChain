@@ -15,9 +15,7 @@
     
 }
 .CameraIcon{
-    opacity: 0;
-    margin-top: 120px;
-}
-.CameraIcon:hover{
     opacity: 1;
+    margin-top: 120px;
+    color: rgb(224, 207, 207)
 }

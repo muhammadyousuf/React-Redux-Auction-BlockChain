@@ -42,7 +42,14 @@ class Product extends Component {
 
                         <div className="col-md-4" >
                            <div className="imgDiv" >
-                           <FaCamera size={150} color="gray" className="CameraIcon " />
+                           <FaCamera size={150} className="CameraIcon " htmlFor="images" />
+                           <input type="file"  style={{
+                        cursor: 'pointer', position: 'absolute',
+                        top: 0, bottom: 0, right: 0, left: 0, width: '100%', opacity: 0,
+                      }}
+                         id="images" accept="image/*"
+                      />
+                    
                             </div>
 
                             </div>
