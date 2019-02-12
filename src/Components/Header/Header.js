@@ -33,14 +33,14 @@ class Header extends Component {
                         {this.state.token === '' || this.state.token === null ?
                             <span>
                                 <Nav className="mr-auto"  >
-                                <Nav.Link href="/Home" className="headerTitle" >Home</Nav.Link>
+                                <Nav.Link href="/" className="headerTitle" >Home</Nav.Link>
                                 <Nav.Link className="headerTitle" >Login</Nav.Link>
                                 <Nav.Link className="headerTitle" >About</Nav.Link>
                                 </Nav>
                             </span> :
                             <span>
                                 <Nav className="mr-auto">
-                                    <Nav.Link href="/Home" className="headerTitle" >Home</Nav.Link>
+                                    <Nav.Link href="/" className="headerTitle" >Home</Nav.Link>
                                     <Nav.Link className="headerTitle" >Dashboard</Nav.Link>
                                     <Nav.Link href="MyAuction" className="headerTitle" >Add Auction</Nav.Link>
 
