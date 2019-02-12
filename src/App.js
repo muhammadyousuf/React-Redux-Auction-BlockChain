@@ -16,7 +16,7 @@ class App extends Component {
         
         <BrowserRouter>
           <Switch>
-            <Route exact component={MainPage} path="/Home" />
+            <Route exact component={MainPage} path="/" />
             <Route exact component={List} path="/List" />
             <Route exact component={AddProduct} path="/AddProduct" />
             <Route exact component={MyAuction} path="/MyAuction" />
