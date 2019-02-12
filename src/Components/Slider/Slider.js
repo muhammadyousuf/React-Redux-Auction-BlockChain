@@ -5,8 +5,8 @@ import { Carousel } from 'react-responsive-carousel';
 class DemoCarousel extends Component {
     render() {
         return (
-            <div className="row"  >
-                <div className="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3">
+            <div className="row justify-content-center"  >
+                <div className="col-md-7  col-xs-10  col-sm-10  ">
                     <Carousel  >
                         <div>
                             <img src={require('../../images/house.jpg')} alt="" />
