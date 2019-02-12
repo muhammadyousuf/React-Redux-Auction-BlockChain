@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Introduction from './Intro';
 import Start from './Start';
-import './Intro.css'
+import './style.css'
 
 
 class MainPage extends Component {
