@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
-import AddProduct from './Components/AddProduct/Screen';
+import Signup from './Components/Signup/Screen';
 import List from './Components/List/Screen';
 import { Provider } from 'react-redux';
 import store from './Store/store';
@@ -18,7 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact component={MainPage} path="/" />
             <Route exact component={List} path="/List" />
-            <Route exact component={AddProduct} path="/AddProduct" />
+            <Route exact component={Signup} path="/Signup" />
             <Route exact component={MyAuction} path="/MyAuction" />
           </Switch>
         </BrowserRouter>
