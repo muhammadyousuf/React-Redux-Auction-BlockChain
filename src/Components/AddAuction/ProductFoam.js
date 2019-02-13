@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './add.css';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
 import {FaCamera} from 'react-icons/fa'
 
 
