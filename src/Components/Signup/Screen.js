@@ -3,7 +3,8 @@ import { addProduct, removeProduct } from '../../Store/Action/action';
 import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-
+import img from './images/image.jpg';
+import './Style.css';
 
 class Signup extends Component {
   constructor(props) {
@@ -26,12 +27,13 @@ class Signup extends Component {
       <div style={{ overflowX: 'hidden' }} >
         <Header />
         <div className="container"  >
-          <div className="">
-            <div className="">
-                <p>dfgd</p>
-              <img src="./images/image.jpg" alt="" />
+          <div className="row justify-content-center">
+            <div className="col-md-6 col-xs-8 col-sm-8 ">
+                
+              <img src={img}alt="" className="img" />
             </div>
-            <form className="">
+             <div className="col-md-6 col-xs-8 col-sm-10" >
+            <form >
               <h3>Registration Form</h3>
               <div className="form-group">
                 <input type="text" placeholder="First Name" className="form-control" />
@@ -42,33 +44,23 @@ class Signup extends Component {
               </div>
               <div className="form-group">
                 <input type="text" placeholder="Username" className="form-control" />
-                <i className="zmdi zmdi-account"></i>
+                
               </div>
               <div className="form-group">
                 <input type="text" placeholder="Email Address" className="form-control" />
-                <i className="zmdi zmdi-email"></i>
               </div>
-              <div className="form-group">
-                <select name="" id="" className="form-control">
-                  <option value="" disabled selected>Gender</option>
-                  <option value="male">Male</option>
-                  <option value="femal">Female</option>
-                  <option value="other">Other</option>
-                </select>
-                <i className="zmdi zmdi-caret-down" style={{ fontSize: "17px" }}></i>
-              </div>
+              
               <div className="form-group">
                 <input type="password" placeholder="Password" className="form-control" />
-                <i className="zmdi zmdi-lock"></i>
+                
               </div>
               <div className="form-group">
                 <input type="password" placeholder="Confirm Password" className="form-control" />
-                <i className="zmdi zmdi-lock"></i>
+                
               </div>
-              <button>Register
-						<i className="zmdi zmdi-arrow-right"></i>
-              </button>
+              <button type="button" className="btn btn-primary justify-content-center">Registration</button>
             </form>
+            </div> 
           </div>
         </div>
         <Footer />
