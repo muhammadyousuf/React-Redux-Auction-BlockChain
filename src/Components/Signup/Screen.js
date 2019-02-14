@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import img from './images/image.jpg';
 import './Style.css';
 
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -24,43 +25,45 @@ class Signup extends Component {
   render() {
 
     return (
-      <div style={{ overflowX: 'hidden' }} >
+      <div style={{ overflowX: 'hidden' }}>
         <Header />
-        <div className="container"  >
+        <div className="container"   >
           <div className="row justify-content-center">
             <div className="col-md-6 col-xs-8 col-sm-8 ">
-                
-              <img src={img}alt="" className="img" />
-            </div>
-             <div className="col-md-6 col-xs-8 col-sm-10" >
-            <form >
-              <h3>Registration Form</h3>
-              <div className="form-group">
-                <input type="text" placeholder="First Name" className="form-control" />
 
-              </div>
-              <div className="form-group">
-                <input type="text" placeholder="Last Name" className="form-control" />
-              </div>
-              <div className="form-group">
-                <input type="text" placeholder="Username" className="form-control" />
-                
-              </div>
-              <div className="form-group">
-                <input type="text" placeholder="Email Address" className="form-control" />
-              </div>
-              
-              <div className="form-group">
-                <input type="password" placeholder="Password" className="form-control" />
-                
-              </div>
-              <div className="form-group">
-                <input type="password" placeholder="Confirm Password" className="form-control" />
-                
-              </div>
-              <button type="button" className="btn btn-primary justify-content-center">Registration</button>
-            </form>
-            </div> 
+              <img src={img} alt="" className="img"  />
+            </div>
+            <div className="col-md-6 col-xs-10 col-sm-11" >
+              <form >
+                <h1 className="headings" >Create a new account</h1>
+                <div className="form-group boxes ">
+                  <input type="text" placeholder="First Name" className="form-control" />
+
+                </div>
+                <div className="form-group boxes">
+                  <input type="text" placeholder="Last Name" className="form-control" />
+                </div>
+                <div className="form-group boxes">
+                  <input type="text" placeholder="Username" className="form-control" />
+
+                </div>
+                <div className="form-group boxes">
+                  <input type="text" placeholder="Email Address" className="form-control" />
+                </div>
+
+                <div className="form-group boxes">
+                  <input type="password" placeholder="Password" className="form-control" />
+
+                </div>
+                <div className="form-group boxes">
+                  <input type="password" placeholder="Confirm Password" className="form-control" />
+
+                </div>
+                <div className="form-group center-block ">
+                  <button type="button" className="btn btn-primary center-block btn-block btn-lg regBtn">Registration</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
         <Footer />

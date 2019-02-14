@@ -3,3 +3,16 @@
     height: 300px;
     margin-top: 20px
 }
+.headings{
+    font-family:'Times New Roman', Times, serif;
+    text-transform: capitalize; 
+    color: rgb(62, 121, 177);
+   
+}
+.boxes{
+    margin-top: 40px;
+}
+.regBtn{
+    margin-top: 50px;
+    
+}
