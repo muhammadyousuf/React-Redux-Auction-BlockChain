@@ -9,7 +9,7 @@ import './add.css';
 class MyAuction extends Component {
     render() {
         return (
-            <div className="container-fuild">
+            <div className="container-fuild" style={{ overflowX: 'hidden' }}>
                 <Header />
                 <Product />
                 <Footer />

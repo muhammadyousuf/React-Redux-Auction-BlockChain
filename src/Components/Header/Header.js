@@ -47,7 +47,8 @@ class Header extends Component {
                                 </Nav>
                                 <Nav>
                                     <Nav.Link href="/MyAuctionList"  className="headerTitle">My Auction</Nav.Link>
-                                    <Nav.Link eventKey={2} className="headerTitle"> History </Nav.Link>
+                                    <Nav.Link href="/OldHistory" eventKey={2} className="headerTitle"> History </Nav.Link>
+                                    <Nav.Link eventKey={2} className="headerTitle"> Logout </Nav.Link>
                                 </Nav>
                             </span>
                         }

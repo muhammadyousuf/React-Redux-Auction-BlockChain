@@ -10,6 +10,7 @@ import MyAuction from './Components/AddAuction/Add';
 import ChangePassword from './Components/ChangePassword/ChangePassword';
 import Dashboard from './Components/Dashboard/Dashboard';
 import MyAuctionList from './Components/MyAuctionList/MyAuctionList';
+import OldHistory from './Components/OldHistory/OldHistory';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact component={MyAuction} path="/MyAuction" />
             <Route exact component={Dashboard} path="/Dashboard" />
             <Route exact component={MyAuctionList} path="/MyAuctionList" />
+            <Route exact component={OldHistory} path="/OldHistory" />
            </Switch>
         </BrowserRouter>
         {/* <div>
