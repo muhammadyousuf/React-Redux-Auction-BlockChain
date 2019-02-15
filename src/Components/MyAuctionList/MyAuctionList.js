@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './MyAuction.css';
+import './MyAuctionList.css';
 
 
-class MyAuction extends Component {
+class MyAuctionList extends Component {
     constructor(props) {
         super();
         this.state = {
@@ -19,4 +19,4 @@ class MyAuction extends Component {
         );
     }
 }
-export default MyAuction;
+export default MyAuctionList;

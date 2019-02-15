@@ -41,12 +41,12 @@ class Header extends Component {
                             <span>
                                 <Nav className="mr-auto">
                                     <Nav.Link href="/" className="headerTitle" >Home</Nav.Link>
-                                    <Nav.Link className="headerTitle" >Dashboard</Nav.Link>
+                                    <Nav.Link href="/Dashboard" className="headerTitle" >Dashboard</Nav.Link>
                                     <Nav.Link href="MyAuction" className="headerTitle" >Add Auction</Nav.Link>
 
                                 </Nav>
                                 <Nav>
-                                    <Nav.Link  className="headerTitle">My Auction</Nav.Link>
+                                    <Nav.Link href="/MyAuctionList"  className="headerTitle">My Auction</Nav.Link>
                                     <Nav.Link eventKey={2} className="headerTitle"> History </Nav.Link>
                                 </Nav>
                             </span>
