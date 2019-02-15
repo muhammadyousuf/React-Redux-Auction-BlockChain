@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Dashboard.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import car from '../../images/car.jpg'
 
 
 class Dashboard extends Component {
@@ -18,8 +19,9 @@ class Dashboard extends Component {
             <div style={{ overflowX: 'hidden' }}>
                 <Header />
                 <div className="container">
-                    <div className="row" >
-                        <div className="col-md-6" >
+                    <div className="row justify-content-center" >
+                        <div className="col-md-6  imgCol" >
+                        <img src={`${car}`} alt="" className="images" />
                         </div>
                         <div className="col-md-6" >
                         </div>
