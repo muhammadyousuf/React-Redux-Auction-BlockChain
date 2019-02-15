@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import img from '../../images/bitcoin.jpg';
-import signupPage from './Functionality';
+import {signupPage,changePassword}  from './Functionality';
 import './Style.css';
 
 
@@ -46,8 +46,7 @@ class Login extends Component {
 
                 </div>
                 <div className="form-group ">
-                  <span className="links" >Forgot Password</span>
-                  <span className="changePassword" >Change Password</span>
+                  <p className="changePassword" onClick={()=>changePassword(this.props)} >Change Password</p>
 
                 </div>
                 <div className="form-group center-block ">
@@ -55,7 +54,7 @@ class Login extends Component {
                 </div>
                 
                 <div className="form-group center-block ">
-                  <button type="button" onClick={signupPage} className="btn btn-info center-block btn-block btn-lg SignBtn">Signup</button>
+                  <button type="button" onClick={()=>signupPage(this.props)} className="btn btn-info center-block btn-block btn-lg SignBtn">Signup</button>
                 </div>
               </form>
             </div>

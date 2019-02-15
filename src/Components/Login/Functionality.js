@@ -1,5 +1,8 @@
-const signupPage = () => {
-    window.location = '/Signup';
+export const signupPage = (props) => {
+     props.history.push('/Signup');
 }
 
-export default signupPage;
+export const changePassword = (props) => {
+console.log('change',props)
+}
+
