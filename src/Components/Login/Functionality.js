@@ -1,5 +1,5 @@
 const signupPage = () => {
-    console.log('go next')
+    window.location = '/Signup';
 }
 
 export default signupPage;

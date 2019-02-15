@@ -45,7 +45,11 @@ class Login extends Component {
                   <input type="password" placeholder="Password" className="form-control" />
 
                 </div>
-                
+                <div className="form-group ">
+                  <span className="links" >Forgot Password</span>
+                  <span className="changePassword" >Change Password</span>
+
+                </div>
                 <div className="form-group center-block ">
                   <button type="button" className="btn btn-primary center-block btn-block btn-lg LogBtn">Login</button>
                 </div>
