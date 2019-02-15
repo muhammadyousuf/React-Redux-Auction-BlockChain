@@ -34,7 +34,7 @@ class Header extends Component {
                             <span>
                                 <Nav className="mr-auto"  >
                                 <Nav.Link href="/" className="headerTitle" >Home</Nav.Link>
-                                <Nav.Link className="headerTitle" >Login</Nav.Link>
+                                <Nav.Link href="Login" className="headerTitle" >Login</Nav.Link>
                                 <Nav.Link className="headerTitle" >About</Nav.Link>
                                 </Nav>
                             </span> :

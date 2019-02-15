@@ -3,7 +3,7 @@ import { addProduct, removeProduct } from '../../Store/Action/action';
 import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import img from './images/image.jpg';
+import img from '../../images/bitcoin.jpg';
 import './Style.css';
 
 
