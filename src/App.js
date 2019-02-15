@@ -7,6 +7,7 @@ import store from './Store/store';
 import './App.css';
 import MainPage from './Components/Main/Main';
 import MyAuction from './Components/AddAuction/Add';
+import ChangePassword from './Components/ChangePassword/ChangePassword';
 
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact component={MainPage} path="/" />
             <Route exact component={Login} path="/Login" />
             <Route exact component={Signup} path="/Signup" />
+            <Route exact component={ChangePassword} path="/ChangePassword" />
             <Route exact component={MyAuction} path="/MyAuction" />
           </Switch>
         </BrowserRouter>

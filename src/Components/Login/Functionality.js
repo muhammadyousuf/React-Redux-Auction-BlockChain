@@ -3,6 +3,6 @@ export const signupPage = (props) => {
 }
 
 export const changePassword = (props) => {
-console.log('change',props)
+props.history.push('./ChangePassword')
 }
 
