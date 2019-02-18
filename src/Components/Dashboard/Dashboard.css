@@ -1,5 +1,5 @@
 .images{
-    width: 70%;
+    width: 100%;
     height: 180px;
 }
 
@@ -21,14 +21,7 @@
   margin-top: 90px;
    margin-left: 0px;
 }
-.headDate{
-    float: right;
-     margin-top: -30px; 
-    color: white;
-    font-family: sans-serif;
-    font-size: 16px;
-    padding-right: 15px;
-}
+
 .listFoot{
     height: 50px;
     margin-left: 0px;
@@ -42,31 +35,34 @@
     font-size: 16px;
     
 }
-
-.footendDate{
-    
-    color: #33648D;
-    float: right;
-    margin-top: -30px; 
-    font-family: sans-serif;
-    font-size: 16px;
-    padding-right: 15px;
-}
 .footPrice{
     font-family: sans-serif;
     color: #33648D;
      padding-left: 10px;
      padding-top: 15px; 
     font-size: 16px;
+    float: right;
 }
+.headDate{
+    float: right;
+     margin-top: -30px; 
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding-right: 15px;
+}
+
+.footendDate{
+    color: #33648d;
+    padding-top: 15px;
+    padding-left: 10px; 
+    font-family: sans-serif;
+    font-size: 16px;
+
+}
+
 .categoryName{
     font-family: 'Times New Roman', Times, serif;
     font-size: 22px;
     margin-top: 220px;
-}
-.btnInfo{
-    float: right;
-    margin-top: 120px;
-    margin-right: 30px;
-    
 }
