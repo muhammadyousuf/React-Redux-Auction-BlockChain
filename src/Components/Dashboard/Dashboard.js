@@ -21,20 +21,23 @@ class Dashboard extends Component {
                 <Header />
                 <div className="container">
                     <div className="row hollDiv" >
-                        <div className="col-md-9 listHead">
-                            <p className="headPara">17/02/2019 01:00 AM</p>
-                            <p className="headPrice">20000$</p>
-                    </div>
-                        <div className="col-md-4   " >
+                    <div className="col-md-6 col-sm-12 col-xs-12 " >
+                        <div className="listHead" >
+                          <p className="headPara">17/02/2019 01:00 AM</p>
+                              <p className="headPrice">20000$</p>
+                            </div>
+                    
+                         <div  >
                             <img src={`${car}`} alt="" className="images" />
                         </div>
-                        <div className="col-md-5" >
+                        {/* <div >
                             <div className="form-group">
                                
                             </div>
-                        </div>
-                        <div className="col-md-9 listFoot " >
+                        </div> */}
+                        <div className="listFoot " >
                             <p className="footendDate">20/02/2019 06:00 PM</p>
+                        </div> 
                         </div>
                     </div>
 
