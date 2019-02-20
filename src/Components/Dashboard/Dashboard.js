@@ -16,6 +16,10 @@ class Dashboard extends Component {
 
         }
     }
+    item(){
+        console.log('item', this.props.history)
+        this.props.history.push('/Item')
+    }
 
     render() {
 
@@ -32,7 +36,7 @@ class Dashboard extends Component {
                             <div className="containers">
                                 <img src={`${car}`} alt="Avatar" className="image"   />
                                     <div className="middle">
-                                        <div className="text">Detail</div>
+                                        <div className="text" onClick={this.item.bind(this)} >Detail</div>
                                     </div>
 </div>
 
