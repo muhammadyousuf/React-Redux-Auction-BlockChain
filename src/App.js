@@ -11,6 +11,7 @@ import ChangePassword from './Components/ChangePassword/ChangePassword';
 import Dashboard from './Components/Dashboard/Dashboard';
 import MyAuctionList from './Components/MyAuctionList/MyAuctionList';
 import OldHistory from './Components/OldHistory/OldHistory';
+import Item from './Components/Item/Item';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact component={Dashboard} path="/Dashboard" />
             <Route exact component={MyAuctionList} path="/MyAuctionList" />
             <Route exact component={OldHistory} path="/OldHistory" />
+            <Route exact component={Item} path="/Item" />
            </Switch>
         </BrowserRouter>
         {/* <div>
