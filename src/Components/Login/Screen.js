@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import img from '../../images/bitcoin.jpg';
-import {signupPage,changePassword}  from './Functionality';
+import {signupPage,changePassword,gotoDashboard}  from './Functionality';
 import './Style.css';
-
+import * as firebase from 'firebase';
 
 
 
@@ -13,9 +13,50 @@ class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            data:null
+            Email: '',
+            Password: ''
         }
     }
+
+
+    loginUser() {
+
+        const email = this.state.Email;
+        const pass = this.state.Password;
+        const auth = firebase.auth();
+
+
+        if (email === "" || pass === "") {
+            alert('Please Fill All The Fields');
+            return
+        }
+
+        // Sign In
+        const promise = auth.signInWithEmailAndPassword(email, pass)
+        promise.then(res => {
+            console.log(res);
+            if (res.user.uid != null) {
+                alert('successfull Login')
+              //  window.location.reload()
+              //  this.props.history.push('/Chat')
+                console.log(res.user.uid);
+                localStorage.setItem("token", res.user.uid);
+                gotoDashboard(this.props)
+            }
+        })
+        promise.catch(e => {
+            alert(e.message)
+        });
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (firebaseUser) {
+                console.log(firebaseUser)
+            }
+
+        })
+    }
+
+
+
     componentDidMount(){
         console.log('user props List', this.state)
     }
@@ -38,19 +79,29 @@ class Login extends Component {
                 <h1 className="head" >Login Your Account</h1>
                 
                 <div className="form-group box">
-                  <input type="text" placeholder="Email Address" className="form-control" />
+                  <input type="text" placeholder="Email Address" className="form-control" onChange={(text)=> {
+                      this.setState({
+                          Email:text.target.value
+
+                      })
+                  }} />
                 </div>
 
                 <div className="form-group box">
-                  <input type="password" placeholder="Password" className="form-control" />
+                  <input type="password" placeholder="Password" className="form-control" onChange={(text)=> {
+                      this.setState({
+                          Password:text.target.value
+
+                      })
+                  }}/>
 
                 </div>
-                <div className="form-group ">
+                {/*<div className="form-group ">
                   <p className="changePassword" onClick={()=>changePassword(this.props)} >Change Password</p>
 
-                </div>
+                </div>*/}
                 <div className="form-group center-block ">
-                  <button type="button" className="btn btn-primary center-block btn-block btn-lg LogBtn">Login</button>
+                  <button type="button" className="btn btn-primary center-block btn-block btn-lg LogBtn" onClick={()=>this.loginUser()}>Login</button>
                 </div>
                 
                 <div className="form-group center-block ">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Dashboard.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -8,140 +8,111 @@ import computer from '../../images/computer.jpg'
 import house from '../../images/house.jpg'
 
 
-
 class Dashboard extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
-
+            data: [1,2,3,4,5,6]
         }
     }
-    item(){
-        console.log('item', this.props.history)
-        this.props.history.push('/Item')
+
+    item(data) {
+
+        console.log("sending data ==> " + JSON.stringify(data))
+        this.props.history.push({
+            pathname: '/Item',
+            state: {
+                data: data
+            }
+        })
     }
+
+    componentDidMount() {
+
+
+
+        //get the auction Data
+
+        this.props.web3Prop.eth.getCoinbase((err, account) => {
+            console.log("account dashboard==> " + account)
+
+            this.props.contractProp.deployed().then((instance) => {
+                console.log("address dashboard==> " + instance.address)
+
+                instance.auctionsCount().then((auctionsCount) => {
+                    console.log("auctionsCount ==> " + auctionsCount)
+                    let tempAuctions = []
+                    for (var i = 1; i <= auctionsCount; i++) {
+                        instance.auctions(i).then((auction) => {
+                            console.log("checking ==> " + auction)
+                            let auctionObj = {
+                                auctionId: auction[0].toNumber(),
+                                auctionName: auction[1],
+                                beneficiary: auction[2],
+                                highestBidder: auction[3],
+                                highestBid: auction[4].toNumber(),
+                                ended: auction[5],
+                                isDelivered: auction[6],
+                                firebaseHash: auction[7]
+                            }
+                            tempAuctions.push(auctionObj)
+
+                            this.setState({
+                                data:tempAuctions
+                            },()=>{
+                                console.log("data updated ==> " + this.state.data.length)
+                            })
+                        })
+                    }
+
+                })
+            })
+        })
+    }
+
 
     render() {
 
         return (
-            <div style={{ overflowX: 'hidden' }}>
-                <Header />
+            <div style={{overflowX: 'hidden'}}>
+                <Header/>
                 <div className="container">
-                    <div className="row hollDiv" >
-                        <div className="col-md-4 col-sm-12 col-xs-12 " >
-                            <div className="listHead" >
-                                <p className="headPara">Car</p>
-                                <p className="headDate">200000$</p>
-                            </div>
-                            <div className="containers">
-                                <img src={`${car}`} alt="Avatar" className="image"   />
-                                    <div className="middle">
-                                        <div className="text" onClick={this.item.bind(this)} >Detail</div>
+                    <div className="row hollDiv">
+
+
+                        {
+                            this.state.data.map((data,index) => {
+                                return (<div key = {index} className="col-md-4 col-sm-12 col-xs-12 ">
+                                    <div className="listHead">
+                                        <p className="headPara">{data.auctionName}</p>
+                                        <p className="headDate">{data.highestBid} Ether</p>
                                     </div>
-</div>
-
-                                <div className="listFoot " >
-                                    <p className="footendDate">Start Date:</p>
-                                    <p className="footPrice" >17/02/2019 01:00 AM</p>
-
-                                </div>
-                            </div>
-                            <div className="col-md-4 col-sm-12 col-xs-12 " >
-                            <div className="listHead" >
-                                <p className="headPara">Bike</p>
-                                <p className="headDate">100000$</p>
-                            </div>
-                            <div className="containers">
-                                <img src={`${bike}`} alt="Avatar" className="image"   />
-                                    <div className="middle">
-                                        <div className="text">Detail</div>
+                                    <div className="containers">
+                                        <img src={`${car}`} alt="Avatar" className="image"/>
+                                        <div className="middle">
+                                            <div className="text" onClick={()=>{
+                                                this.item(data)
+                                            }}>Detail</div>
+                                        </div>
                                     </div>
-</div>
 
-                                <div className="listFoot " >
-                                    <p className="footendDate">Start Date:</p>
-                                    <p className="footPrice" >25/02/2019 05:00 AM</p>
+                                    <div className="listFoot ">
+                                        <p className="footendDate">Start Date:</p>
+                                        <p className="footPrice">17/02/2019 01:00 AM</p>
 
-                                </div>
-                            </div>
-                            <div className="col-md-4 col-sm-12 col-xs-12 " >
-                            <div className="listHead" >
-                                <p className="headPara">House</p>
-                                <p className="headDate">500000$</p>
-                            </div>
-                            <div className="containers">
-                                <img src={`${house}`} alt="Avatar" className="image"   />
-                                    <div className="middle">
-                                        <div className="text">Detail</div>
                                     </div>
-</div>
+                                </div>)
+                            })
+                        }
 
-                                <div className="listFoot " >
-                                    <p className="footendDate">Start Date:</p>
-                                    <p className="footPrice" >02/03/2019 03:00 PM</p>
-
-                                </div>
-                            </div>
-                            <div className="col-md-4 col-sm-12 col-xs-12 " >
-                            <div className="listHead" >
-                                <p className="headPara">Computer</p>
-                                <p className="headDate">5000$</p>
-                            </div>
-                            <div className="containers">
-                                <img src={`${computer}`} alt="Avatar" className="image"   />
-                                    <div className="middle">
-                                        <div className="text">Detail</div>
-                                    </div>
-</div>
-
-                                <div className="listFoot " >
-                                    <p className="footendDate">Start Date:</p>
-                                    <p className="footPrice" >08/03/2019 06:00 PM</p>
-
-                                </div>
-                            </div>
-                            <div className="col-md-4 col-sm-12 col-xs-12 " >
-                            <div className="listHead" >
-                                <p className="headPara">Car</p>
-                                <p className="headDate">60000$</p>
-                            </div>
-                            <div className="containers">
-                                <img src={`${car}`} alt="Avatar" className="image"   />
-                                    <div className="middle">
-                                        <div className="text">Detail</div>
-                                    </div>
-</div>
-
-                                <div className="listFoot " >
-                                    <p className="footendDate">Start Date:</p>
-                                    <p className="footPrice" >15/03/2019 05:00 AM</p>
-
-                                </div>
-                            </div>
-                            <div className="col-md-4 col-sm-12 col-xs-12 " >
-                            <div className="listHead" >
-                                <p className="headPara">Hoouse</p>
-                                <p className="headDate">700000$</p>
-                            </div>
-                            <div className="containers">
-                                <img src={`${house}`} alt="Avatar" className="image"   />
-                                    <div className="middle">
-                                        <div className="text">Detail</div>
-                                    </div>
-</div>
-
-                                <div className="listFoot " >
-                                    <p className="footendDate">Start Date:</p>
-                                    <p className="footPrice" >22/03/2019 08:00 AM</p>
-
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
-                    <Footer />
+
                 </div>
-                );
-            }
-        }
+                <Footer/>
+            </div>
+        );
+    }
+}
+
 export default Dashboard;
