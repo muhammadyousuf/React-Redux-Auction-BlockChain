@@ -12,7 +12,7 @@ class MainPage extends Component {
         return (
             <div className="container-fuild main "   >
                <div className="bgImage" >
-                <Header />
+                <Header {...this.props}/>
                 <Start />
                 </div>
                 <div className="row sliderTop"  >

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.2",
     "bootstrap": "^4.3.0",
     "firebase": "^5.8.4",
+    "material-ui": "^0.20.2",
     "react": "^16.7.0",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.7.0",
@@ -14,6 +14,7 @@
     "react-responsive-carousel": "^3.1.46",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5",
+    "react-toastify": "^4.5.2",
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",

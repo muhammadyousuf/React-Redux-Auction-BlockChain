@@ -73,7 +73,8 @@ class App extends Component {
                         <Route exact render={(props)=> <Dashboard web3Prop={this.web3} contractProp={this.auctionContract} {...props} />} path="/Dashboard" />
                         <Route exact component={MyAuctionList} path="/MyAuctionList"/>
                         <Route exact component={OldHistory} path="/OldHistory"/>
-                        <Route exact component={Item} path="/Item"/>
+                        <Route exact render={(props)=> <Item web3Prop={this.web3} contractProp={this.auctionContract} {...props} />} path="/Item" />
+
                     </Switch>
                 </BrowserRouter>
                 {/* <div>

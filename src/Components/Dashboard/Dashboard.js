@@ -12,7 +12,7 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [1,2,3,4,5,6]
+            data: []
         }
     }
 
@@ -75,7 +75,7 @@ class Dashboard extends Component {
 
         return (
             <div style={{overflowX: 'hidden'}}>
-                <Header/>
+                <Header {...this.props} />
                 <div className="container">
                     <div className="row hollDiv">
 

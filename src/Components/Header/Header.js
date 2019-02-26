@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import './Header.css';
-
+import * as firebase from 'firebase';
 
 class Header extends Component {
     constructor(props) {
@@ -23,6 +23,11 @@ class Header extends Component {
        // this.props.history.push('MyAuction')
     }
 
+    logOut(){
+        firebase.auth().signOut();
+        localStorage.clear();
+        this.props.history.push('/')
+    }
     render() {
         return (
             <div className="container-fuild HeaderColor" >
@@ -48,7 +53,9 @@ class Header extends Component {
                                 <Nav>
                                     <Nav.Link href="/MyAuctionList"  className="headerTitle">My Auction</Nav.Link>
                                     <Nav.Link href="/OldHistory" eventKey={2} className="headerTitle"> History </Nav.Link>
-                                    <Nav.Link eventKey={2} className="headerTitle"> Logout </Nav.Link>
+                                    <Nav.Link eventKey={2} className="headerTitle" onClick={()=>{
+                                        this.logOut()
+                                    }}> Logout </Nav.Link>
                                 </Nav>
                             </span>
                         }

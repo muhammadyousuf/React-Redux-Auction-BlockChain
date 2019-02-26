@@ -39,11 +39,18 @@ class Login extends Component {
                 alert('successfull Login')
               //  window.location.reload()
               //  this.props.history.push('/Chat')
-                console.log(res.user.uid);
-                localStorage.setItem("token", res.user.uid);
-                gotoDashboard(this.props)
+
+
+                firebase.database().ref("users").child(res.user.uid).on('value',dataSnapshot => {
+                    localStorage.setItem("token", res.user.uid);
+                    localStorage.setItem("userAccount", dataSnapshot.val().accountAddress);
+                    gotoDashboard(this.props)
+                })
+
+
             }
         })
+
         promise.catch(e => {
             alert(e.message)
         });
@@ -67,7 +74,7 @@ class Login extends Component {
         return (
             <React.Fragment>
                 <div style={{ overflowX: 'hidden' }}>
-        <Header />
+        <Header {...this.props}/>
         <div className="container"   >
           <div className="row justify-content-center">
             <div className="col-md-6 col-xs-8 col-sm-8 ">

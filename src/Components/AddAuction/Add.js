@@ -7,10 +7,15 @@ import './add.css';
 
 
 class MyAuction extends Component {
+
+    constructor(props){
+        super(props);
+    }
+
     render() {
         return (
             <div className="container-fuild" style={{ overflowX: 'hidden' }}>
-                <Header />
+                <Header {...this.props}/>
                 <Product />
                 <Footer />
             </div>

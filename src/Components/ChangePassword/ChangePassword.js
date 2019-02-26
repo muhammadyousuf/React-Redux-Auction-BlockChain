@@ -20,7 +20,7 @@ class ChangePassword extends Component {
         return (
             <React.Fragment>
                 <div style={{ overflowX: 'hidden' }}>
-        <Header />
+        <Header {...this.props}/>
         <div className="container"   >
           <div className="row justify-content-center">
             <div className="col-md-6 col-xs-8 col-sm-8 ">

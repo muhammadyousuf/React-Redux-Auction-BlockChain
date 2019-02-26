@@ -50,16 +50,16 @@ class Signup extends Component {
         promise.then((res) => {
             if (res.user.uid != null) {
 
-                console.log("UID ==> " + res.user.uid)
+                console.log("UID ==> " + res.user.uid);
+
+                localStorage.setItem('token',res.user.uid);
+
                 this.ref.child(res.user.uid).set({
                     firstname: this.state.firstname + " " + this.state.lastname,
                     Email: this.state.Email,
                     password: this.state.password,
                     accountAddress: this.state.accountAddress
-                }).then((snapShot)=>{
-                    console.log("Snap Shot ==> " + JSON.stringify(snapShot))
-                })
-
+                });
                 this.setState({
                     firstname: '',
                     lastname: '',
@@ -68,6 +68,7 @@ class Signup extends Component {
                     ConformPass: '',
                     value: ''
                 })
+                this.props.history.push('/Dashboard')
             }
         });
         promise.catch(e => alert(e.message));
@@ -83,7 +84,7 @@ class Signup extends Component {
     render() {
         return (
             <div style={{overflowX: 'hidden'}}>
-                <Header/>
+                <Header {...this.props}/>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-6 col-xs-8 col-sm-8 ">

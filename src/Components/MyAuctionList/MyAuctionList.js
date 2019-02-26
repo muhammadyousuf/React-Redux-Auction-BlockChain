@@ -16,7 +16,7 @@ class MyAuctionList extends Component {
 
         return (
             <div style={{ overflowX: 'hidden' }}>
-                <Header />
+                <Header {...this.props} />
                 <div className="container">
                     <div className="row" >
                         <div className="col-md-6" >
