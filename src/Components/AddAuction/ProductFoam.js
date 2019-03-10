@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Web3 from 'web3';
 import AuctionContract from '../../../build/contracts/AuctionContract.json'
 import TruffleContract from 'truffle-contract'
-
+import {ACCOUNT_ADDRESS,VALUE,GAS} from "../../Constants";
 
 class Product extends Component {
     constructor(props) {
@@ -61,21 +61,15 @@ class Product extends Component {
                 name: this.state.title,
                 description: this.state.description,
                 category: this.state.category,
-                price: this.state.price,
+                price: this.state.price * VALUE ,
                 image: this.state.img,
                 date:this.getFormattedTime()
                 // img : urlm
             }).then((snap) => {
                 console.log("Snap ==>" + snap.key)
-                toast('Record add')
+
                 this.pushDataToBlockChain(snap.key)
-                this.setState({
-                    title: '',
-                    description: '',
-                    category: '',
-                    price: '',
-                    img: ''
-                })
+
             })
 
 
@@ -87,12 +81,20 @@ class Product extends Component {
             console.log("account ==> " + account)
 
             this.auctionContract.deployed().then((instance) => {
-                instance.createAuction(this.state.title, hash, this.state.price, {
-                    from: account,
+                instance.createAuction(this.state.title, hash, this.state.price * VALUE, {
+                    from: localStorage.getItem(ACCOUNT_ADDRESS),
                     value: 0,
-                    gas: 3000000
+                    gas: GAS
                 }).then(() => {
                     console.log("createAuction ==> ")
+                    toast('Record add')
+                    this.setState({
+                        title: '',
+                        description: '',
+                        category: '',
+                        price: '',
+                        img: ''
+                    })
                 })
             })
         })
@@ -227,7 +229,7 @@ class Product extends Component {
                                     this.setState({price: event.target.value})
                                 }} className="form-control" id="price" value={this.state.price} placeholder="Price"/>
                             </div>
-                           
+
                             <div className="form-group center-block ">
                                 <button type="button" className="btn btn-primary center-block btn-block btn-lg regBtn"
                                         onClick={() => {

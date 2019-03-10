@@ -1,22 +1,24 @@
 .itemIm{
    
-  width: 100%;
-  border-radius: 5%
+  width: 60%;
+  border-radius: 10%;
+  max-height: 600px;
 }
 .imgtoper{
 margin-top: 10%;
 }
 .itemHeader{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Roboto", sans-serif;
     color: rgb(73, 73, 160);
     font-size: 18px;
     font-weight: bold;   
 }
 .divItemTop{
-    margin-top: 50px;
+
+
 }
 .ItemValueStyle{
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 15px;
     color: rgb(102, 99, 99);
 }
@@ -29,5 +31,18 @@ margin-top: 10%;
 }
 .ADDBID{
     margin-top: 160px;
+
+}
+.heading_class{
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    color: rgb(73, 73, 160);
+    text-transform: capitalize;
+}
+.detail_container{
+    margin-top: 50px;
+    border: 2px solid #9DB5CB;
+    padding: 1.7%;
+    border-radius: 4%;
 
 }

@@ -6,6 +6,8 @@ import Footer from '../Footer/Footer';
 import img from '../../images/bitcoin.jpg';
 import './Style.css';
 import * as firebase from 'firebase';
+import {PROJECT_NAME} from "../../Constants";
+import {sendEmail} from "../../Utils";
 
 class Signup extends Component {
     constructor(props) {
@@ -43,6 +45,12 @@ class Signup extends Component {
             alert('Incorrect Password')
             return
         }
+
+        /*Sending Mail*/
+        sendEmail(this.state.Email,"Thank you for showing your trust on " + PROJECT_NAME)
+        /*Sending Mail*/
+
+
         const email = this.state.Email;
         const pass = this.state.password;
         const auth = firebase.auth();
@@ -60,6 +68,10 @@ class Signup extends Component {
                     password: this.state.password,
                     accountAddress: this.state.accountAddress
                 });
+                localStorage.setItem('token',res.user.uid);
+                localStorage.setItem("userAccount",  this.state.accountAddress);
+
+
                 this.setState({
                     firstname: '',
                     lastname: '',
@@ -68,6 +80,8 @@ class Signup extends Component {
                     ConformPass: '',
                     value: ''
                 })
+
+
                 this.props.history.push('/Dashboard')
             }
         });

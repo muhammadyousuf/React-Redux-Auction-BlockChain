@@ -10,54 +10,103 @@
     margin-top: 20px;
 }
 .hollDiv{
-     margin-top: 20px;
+    margin-top: 20px;
     padding-bottom: 0px;
     border-radius: 30px;
-    padding-right: 0px; 
+    padding-right: 0px;
 }
 .listHead{
-    height: 50px;
-   background-color: #33648D;
-  margin-top: 90px;
-   margin-left: 0px;
+    height: 450px;
+    background-color: #fff;
+    margin-top: 90px;
+    margin-left: 0px;
+    border-radius: 5%;
+    border: 2px solid white;
+    box-shadow: 0 0 3px 3px #EDEDED;
+
 }
 
 .listFoot{
     height: 50px;
     margin-left: 0px;
-    background-color: rgb(209, 204, 204);
+    /* background-color: rgb(248, 247, 247); */
+    margin-top: 0px;
+
 }
 .headPara{
-    font-family: sans-serif;
-    color: rgb(248, 244, 244);
-     padding-left: 10px;
-     padding-top: 15px; 
-    font-size: 16px;
-    
+    font-family:'roboto,sans-serif';
+    color: rgb(15, 15, 15);
+    padding-left: 10px;
+    padding-top: 15px;
+    font-size: 22px;
+    font-weight: bold
+
 }
 .footPrice{
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(25, 111, 182);
-    margin-left: 75px;
-    margin-top: -27px;
+    font-family: 'roboto,sans-serif';
+    color: rgb(14, 15, 15);
+    margin-left: 70px;
+    margin-top: -42px;
     font-size: 12px;
-    
+    font-style: italic;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+}
+.coverImage{
+    background-image: url('../../images/blockchain.png');
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size:cover
+}
+.dashHeAD{
+    font-family: 'roboto,sans-serif';
+    text-align: center;
+    margin-top: 45px;
+    font-size: 34px
+}
+.deshPara{
+    font-family: 'roboto,sans-serif';
+    text-align: center;
+    margin-top: 4px;
+    font-size: 14px
+}
+.statusCheck{
+    font-family: 'roboto,sans-serif';
+    color: rgb(14, 15, 15);
+    margin-left: 100px;
+    margin-top: -42px;
+    font-size: 14px;
+    font-style: italic;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
 }
 .headDate{
-    float: right;
-     margin-top: -30px; 
-    color: white;
-    font-family: sans-serif;
-    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: rgb(2, 2, 2);
+    font-family: 'roboto,sans-serif';
+    font-size: 18px;
     padding-right: 15px;
 }
 
 .footendDate{
-    color: #090a0a;
-    padding-top: 15px;
-    padding-left: 10px; 
-    font-family: 'Times New Roman', Times, serif;
+    color: #010a0a;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 1px;
+    border-radius: 5px;
+    font-family: 'roboto,sans-serif';
     font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 5px;
+
+
 
 }
 
@@ -69,40 +118,50 @@
 .containers {
     position: relative;
     width: 100%;
-  }
-  
-  .image {
+}
+
+.image {
     opacity: 1;
     display: block;
-    width: 100%; 
+    width: 100%;
     height: 200px;
     transition: .5s ease;
     backface-visibility: hidden;
-  }
-  
-  .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .container:hover .image {
-    opacity: 0.3;
-  }
-  
-  .container:hover .middle {
-    opacity: 1;
-  }
-  
-  .text {
-    background-color: #4CAF50;
+    border-radius: 5%;
+}
+
+
+
+
+.text {
+    background-color: #33648D;
     color: white;
-    font-size: 16px;
-    padding: 16px 32px;
+    font-size: 18px;
+    padding: 10px 20px;
     cursor: pointer;
-  }
+    width: 85px;
+    margin-left: 60%;
+    margin-top: 20px;
+    font-family: 'roboto,sans-serif';
+    border-radius: 1px;
+    margin-right: 20px
+}
+.iconBtn {
+    background-color: #33648D;
+    color: white;
+    font-size: 18px;
+    padding: 2px 7px;
+    cursor: pointer;
+    width: 40px;
+
+    margin-top: 20px;
+    font-family: 'roboto,sans-serif';
+    border-radius: 1px;
+    margin-right: 20px;
+    display:inline-block ;
+    margin:10px
+}
+.EdittextBox{
+    margin-top: 5px;
+
+}

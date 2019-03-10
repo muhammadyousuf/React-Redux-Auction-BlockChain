@@ -69,9 +69,9 @@ class App extends Component {
                         <Route exact component={Login} path="/Login"/>
                         <Route exact component={Signup} path="/Signup"/>
                         <Route exact component={ChangePassword} path="/ChangePassword"/>
-                        <Route exact component={MyAuction} path="/MyAuction"/>
+                        <Route exact component={MyAuction} path="/ADDAUCTION"/>
                         <Route exact render={(props)=> <Dashboard web3Prop={this.web3} contractProp={this.auctionContract} {...props} />} path="/Dashboard" />
-                        <Route exact component={MyAuctionList} path="/MyAuctionList"/>
+                        <Route exact render={(props)=> <MyAuctionList web3Prop={this.web3} contractProp={this.auctionContract} {...props} />} path="/MyAuctionList" />
                         <Route exact component={OldHistory} path="/OldHistory"/>
                         <Route exact render={(props)=> <Item web3Prop={this.web3} contractProp={this.auctionContract} {...props} />} path="/Item" />
 

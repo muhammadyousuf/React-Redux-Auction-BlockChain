@@ -98,6 +98,9 @@ contract AuctionContract {
 
       auction.beneficiary.transfer(auction.highestBid/2);
 
+      auction.isDelivered = true;
+
+
       emit SuccessfulDelivered(auction.highestBidder, auction.highestBid);
 
       auctions[_id] = auction;
