@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85ebb5e-1c03-47e3-b364-434642cc8c4c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/blockchain.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contracts/AuctionContract.sol" afterPath="$PROJECT_DIR$/contracts/AuctionContract.sol" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/AddAuction/ProductFoam.js" afterPath="$PROJECT_DIR$/src/Components/AddAuction/ProductFoam.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashboard/Dashboard.css" afterPath="$PROJECT_DIR$/src/Components/Dashboard/Dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashboard/Dashboard.js" afterPath="$PROJECT_DIR$/src/Components/Dashboard/Dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Item/Item.js" afterPath="$PROJECT_DIR$/src/Components/Item/Item.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Item/item.css" afterPath="$PROJECT_DIR$/src/Components/Item/item.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/MyAuctionList/MyAuctionList.js" afterPath="$PROJECT_DIR$/src/Components/MyAuctionList/MyAuctionList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Signup/Screen.js" afterPath="$PROJECT_DIR$/src/Components/Signup/Screen.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,30 +15,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="item.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Item/item.css">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="584">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Item/Item.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="221" column="20" lean-forward="false" selection-start-line="221" selection-start-column="20" selection-end-line="221" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="n#!!block;n#endAuction#0;n#Item#0" expanded="false" />
-                <element signature="n#!!block;n#markDeliverFlag#0;n#Item#0" expanded="false" />
-                <element signature="n#!!block;n#renderBidView#0;n#Item#0" expanded="false" />
-                <element signature="e#9868#10264#0" expanded="false" />
-                <element signature="e#10297#10501#0" expanded="false" />
-                <element signature="e#10534#10719#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -67,12 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GAS</find>
-      <find>this.state.i</find>
-      <find>this.state.contractData.id</find>
-      <find>endAuction</find>
-      <find>Item De</find>
-      <find>contractData</find>
       <find>verifyDelivery</find>
       <find>auction</find>
       <find>isDelivered</find>
@@ -97,6 +60,12 @@
       <find>itemIm</find>
       <find>img</find>
       <find>heading_class</find>
+      <find>form-group</find>
+      <find>shad</find>
+      <find>text</find>
+      <find>ca</find>
+      <find>bid-text</find>
+      <find>inp</find>
     </findStrings>
     <replaceStrings>
       <replace>this.state.contractData.auctionId</replace>
@@ -127,7 +96,6 @@
         <option value="$PROJECT_DIR$/src/Components/Dashboard/Dashboard.css" />
         <option value="$PROJECT_DIR$/src/Components/MyAuctionList/MyAuctionList.js" />
         <option value="$PROJECT_DIR$/build/contracts/AuctionContract.json" />
-        <option value="$PROJECT_DIR$/src/Components/Item/Item.js" />
         <option value="$PROJECT_DIR$/src/Components/Utils.js" />
         <option value="$PROJECT_DIR$/src/Components/Signup/Screen.js" />
         <option value="$PROJECT_DIR$/src/Utils.js" />
@@ -136,6 +104,8 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/Components/Item/item.css" />
+        <option value="$PROJECT_DIR$/src/Components/Item/Item.js" />
+        <option value="$PROJECT_DIR$/src/Components/Footer/Footer.js" />
       </list>
     </option>
   </component>
@@ -152,7 +122,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+    <option name="x" value="-51" />
+    <option name="y" value="-12" />
     <option name="width" value="697" />
     <option name="height" value="376" />
   </component>
@@ -189,33 +160,6 @@
               <item name="React-Redux-Auction-BlockChain" type="b2602c69:ProjectViewProjectNode" />
               <item name="React-Redux-Auction-BlockChain" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="React-Redux-Auction-BlockChain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React-Redux-Auction-BlockChain" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="React-Redux-Auction-BlockChain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React-Redux-Auction-BlockChain" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="React-Redux-Auction-BlockChain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React-Redux-Auction-BlockChain" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Header" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="React-Redux-Auction-BlockChain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React-Redux-Auction-BlockChain" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Item" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -270,7 +214,7 @@
       <updated>1550953997361</updated>
       <workItem from="1550954003395" duration="2258000" />
       <workItem from="1550995860895" duration="56274000" />
-      <workItem from="1551553427499" duration="37338000" />
+      <workItem from="1551553427499" duration="40769000" />
     </task>
     <task id="LOCAL-00001" summary="Email Done">
       <created>1551212600157</created>
@@ -279,11 +223,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551212600157</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DashBoard done">
+      <created>1552246229083</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552246229083</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95870000" />
+    <option name="totallyTimeSpent" value="99301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -366,7 +317,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Email Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Email Done" />
+    <MESSAGE value="DashBoard done" />
+    <option name="LAST_COMMIT_MESSAGE" value="DashBoard done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -375,7 +327,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/build/contracts/Migrations.json" />
     <entry file="file://$PROJECT_DIR$/src/migrations/2_deploy_contracts.js" />
     <entry file="file://$PROJECT_DIR$/src/contracts/AuctionContract.sol" />
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
@@ -610,14 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashboard/Dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="166" column="1" lean-forward="false" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -702,14 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="71" column="66" lean-forward="false" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -718,27 +653,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashboard/Dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Item/item.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="347">
+          <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Item/Item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="221" column="20" lean-forward="false" selection-start-line="221" selection-start-column="20" selection-end-line="221" selection-end-column="20" />
+        <state relative-caret-position="267">
+          <caret line="253" column="92" lean-forward="false" selection-start-line="253" selection-start-column="92" selection-end-line="253" selection-end-column="92" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#endAuction#0;n#Item#0" expanded="false" />
             <element signature="n#!!block;n#markDeliverFlag#0;n#Item#0" expanded="false" />
             <element signature="n#!!block;n#renderBidView#0;n#Item#0" expanded="false" />
-            <element signature="e#9868#10264#0" expanded="false" />
-            <element signature="e#10297#10501#0" expanded="false" />
-            <element signature="e#10534#10719#0" expanded="false" />
+            <element signature="e#10597#10993#0" expanded="false" />
+            <element signature="e#11026#11230#0" expanded="false" />
+            <element signature="e#11263#11448#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

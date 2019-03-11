@@ -46,3 +46,51 @@ margin-top: 10%;
     border-radius: 4%;
 
 }
+.bid-view{
+    width: 300px;
+    height: 500px;
+    background-color: #ffffff;
+    border:2px solid #EDEDED;
+    padding: 10px;
+
+}
+.circle-view{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border:4px solid rgb(73, 73, 160);
+    margin-left: 60px;
+}
+.auction-heading{
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+
+}
+.bid-text{
+    text-align: center;
+    margin-top: 55px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: capitalize;
+}
+.auction-bid-input{
+    margin-top: 60px;
+    text-align: center;
+}
+.bid-btn{
+    width: 240px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.bid-text-value{
+    font-family: Arial;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(244,129,32);
+}

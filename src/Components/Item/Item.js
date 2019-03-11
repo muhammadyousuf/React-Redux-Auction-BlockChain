@@ -173,7 +173,7 @@ class Item extends Component {
     }
 
     renderLeftViews() {
-        if(this.isOwnerLogin()){
+      /*  if(this.isOwnerLogin()){
             return this.renderEndAuctionView()
         }else if(this.state.contractData.ended && !this.state.contractData.isDelivered && this.state.contractData.beneficiary != this.state.activeAccount){
             return this.itemDeliveredView()
@@ -183,7 +183,9 @@ class Item extends Component {
         }
         else{
             return this.renderBidView()
-        }
+        }*/
+
+      return this.yousufTest()
     }
 
     itemDeliveredView(){
@@ -232,6 +234,33 @@ class Item extends Component {
     }
 
 
+    yousufTest() {
+        return (  <div className="form-group bid-view">
+
+
+            <h1 className="auction-heading">Auction</h1>
+
+            <hr/>
+
+            <div className="circle-view">
+
+                <p className="bid-text" > Current bid</p>
+                <p className="bid-text-value" > $99.00</p>
+
+
+            </div>
+
+
+            <input style={{width: 180, marginLeft: '50px',marginBottom:'10px'}} type="number" className="form-control auction-bid-input" id="usr"
+                   onChange={(event) => {
+                       this.setState({priceInput: event.target.value})
+                   }}/>
+
+            <button type="button" className="btn btn-success bid-btn" onClick={()=>{this.bidAuction()}}>ADD BID</button>
+        </div>)
+    }
+
+
     renderAlreadyEndedAuctionView() {
         return (  <div className="form-group">
             <button type="button" className="btn btn-success">Auction Ended</button>
@@ -251,8 +280,8 @@ class Item extends Component {
                     data == null ?  <Loader status={this.state.status}/>: <div className="container">
                         <div className="row imgtoper">
                             <div className="col-md-3 col-sm-6 col-xs-6 ">
-                                <div className="AddBItBox">
-                                    <br/><br/><br/>
+                                <div>
+
 
                                     {
                                         this.renderLeftViews()

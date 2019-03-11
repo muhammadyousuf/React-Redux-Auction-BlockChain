@@ -48,7 +48,7 @@ class Footer extends Component {
                             </div>
                             <div className="col-md-3 col-xs-12 col-sm-6 col-xl-3 col-lg-3" >
                                 <h1 className="footerHeaging" >Customer Service</h1>
-                                 <ul>
+                                {/* <ul>
                                     <li className="list">Buyer Guide</li>
                                     <li className="list">Become a Pro Seller</li>
                                     <li className="list">Sell on Kaymu</li>
@@ -58,7 +58,7 @@ class Footer extends Component {
                                     <li className="list">PAYE Charges</li>
                                     <li className="list">eCommerce Report</li>
                                     <li className="list">Guides</li>
-                                </ul>                            </div>
+                                </ul>   */}                         </div>
                             <div className="col-md-3 col-xs-12 col-sm-6 col-xl-3 col-lg-3">
                                 <h1 className="footerHeaging"  >About US</h1>
                                 <ul>
