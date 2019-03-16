@@ -7,29 +7,34 @@ import { MdDelete, MdEdit, MdVisibility } from 'react-icons/md';
 import '../Dashboard/Dashboard.css';
 import { Dialog, FlatButton } from 'material-ui';
 import {HIDE, LOADING} from "../../loader";
-import {ACCOUNT_ADDRESS, VALUE} from "../../Constants";
+import {ACCOUNT_ADDRESS, GAS, VALUE} from "../../Constants";
+import Loader from "../../loader";
 
+import * as firebase from 'firebase';
 class MyAuctionList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [],
-            open: false,
-            title:'Bike',
-            description:'A car (or automobile) is a wheeled motor vehicle used for transportation. Most definitions of car say they run primarily on roads, seat one to eight people, have four tires, and mainly transport people rather than goods. Cars became widely available in the early 20th century',
-            price:'5 Ether',
-            category:'Honda',
             status : LOADING,
             activeAccount: localStorage.getItem(ACCOUNT_ADDRESS),
+
+            //pop up
+            title:'',
+            description:'',
+            price:'',
+            category:'',
+
+            //firebase item
+            cloudData:null,
+            selectedData:null,
+
+            selectedIndex:0,
         }
     }
 
     componentDidMount() {
-
-
-
         //get the auction Data
-
         this.props.web3Prop.eth.getCoinbase((err, account) => {
             console.log("account dashboard==> " + account)
 
@@ -71,10 +76,34 @@ class MyAuctionList extends Component {
     }
 
 
-    item() {
+    item(data) {
         console.log('item', this.props.history)
-        this.props.history.push('/Item')
+        this.props.history.push({
+            pathname: '/Item',
+            state: {
+                data: data,
+                title:data.auctionName,
+                category:data,
+                description:data
+
+            }
+        })
     }
+
+    getDataFromCloud = (data) =>{
+        firebase.database().ref("Auctions").child(data.firebaseHash).on('value', dataSnapshot => {
+
+            this.setState({
+                cloudData: dataSnapshot.val(),
+                status : HIDE,
+                open: true,
+                title:dataSnapshot.val().name,
+                description:dataSnapshot.val().description,
+                category:dataSnapshot.val().category,
+            })
+        })
+    };
+
     handleClose() {
         this.setState({ open: false });
     };
@@ -82,8 +111,57 @@ class MyAuctionList extends Component {
         console.log('Edit');
         this.setState({ open: false });
     }
-    handleOpen = () => {
-        this.setState({ open: true })
+
+    updatedBid = (data) => {
+
+        //update data on blockchain
+        this.updateDataOnBlockChain(Number(data.auctionId),data)
+
+         //update data on firebase
+
+
+    };
+
+    updateDataOnCloud = (uid) => {
+        firebase.database().ref('/Auctions').child(uid).update({
+            category: this.state.category,
+            description: this.state.description,
+            name: this.state.title,
+        }).then(t => {
+            //update
+            let tempData = this.state.data
+            tempData[this.state.selectedIndex].auctionName = this.state.title;
+            this.setState({
+                data:tempData,
+                open: false
+            })
+        })
+
+    };
+
+    updateDataOnBlockChain = (auctionId,data) => {
+        this.props.web3Prop.eth.getCoinbase((err, account) => {
+            console.log("Item Page ==> " + account)
+            this.props.contractProp.deployed().then((instance) => {
+                instance.editAuction(auctionId,this.state.title, {
+                    from: this.state.activeAccount,
+                    gas: GAS
+                })
+            }).then(()=>{
+                this.updateDataOnCloud(data.firebaseHash)
+            })
+        })
+    };
+
+    handleOpen = (data,index) => {
+
+        this.setState({
+            status : LOADING,
+            selectedData : data,
+            selectedIndex : index
+        })
+
+        this.getDataFromCloud(data)
     }
     render() {
         const actions = [
@@ -95,13 +173,16 @@ class MyAuctionList extends Component {
                 label="Update"
                 primary={true}
                 keyboardFocused={true}
-                onClick={() => this.EditData()}
+                onClick={() => this.updatedBid(this.state.selectedData)}
                 disabled={this.state.button}
             />,
         ];
         return (
             <div style={{ overflowX: 'hidden', backgroundColor: '#fff' }}  >
                 <div className="coverImage" >
+
+                    <Loader status={this.state.status}/>
+
                     <Header />
                 </div>
                 <div>
@@ -116,19 +197,23 @@ class MyAuctionList extends Component {
                                     <div className="col-md-4 col-sm-12 col-xs-12  " key={index} >
                                         <div className="listHead" >
                                             <div className="containers">
-                                                <img src={`${car}`} alt="Avatar" className="image" />
+                                                {/*<img src={`${car}`} alt="Avatar" className="image" />*/}
+                                                <i class="fa fa-gavel" style={{
+                                                    fontSize:150,
+                                                    marginTop:20
+                                                }}></i>
                                             </div>
-                                            <p className="headPara">Bike</p>
+                                            <p className="headPara">{data.auctionName}</p>
                                             <div className="listFoot " >
-                                                <p className="footendDate">Start Date</p>
-                                                <p className="footPrice" >17/02/2019 01:00 AM</p>
+                                            {/*    <p className="footendDate">Start Date</p>
+                                                <p className="footPrice" >17/02/2019 01:00 AM</p>*/}
                                                 <p className="footendDate">Auction Status</p>
-                                                <p className="statusCheck" >Open</p>
-                                                <p className="headDate">Highest Bid = 5 Ether</p>
+                                                <p className="statusCheck" >{data.ended ? "Closed" : "Open"}</p>
+                                                <p className="headDate">Highest Bid = {data.beneficiary === data.highestBidder ? "Bid Yet Not Started Start your bid at min " + data.highestBid : data.highestBid} Ether</p>
                                                 <div style={{ textAlign: 'center' }} >
-                                                    <div className="iconBtn" onClick={this.item.bind(this)} ><MdVisibility size={25} style={{ marginTop: 5 }} /></div>
-                                                    <div className="iconBtn" onClick={this.item.bind(this)} ><MdDelete size={25} style={{ marginTop: 5 }} /></div>
-                                                    <div className="iconBtn" onClick={this.handleOpen} ><MdEdit size={25} style={{ marginTop: 5 }} /></div>
+                                                    <div className="iconBtn" onClick={()=>this.item(data)} ><MdVisibility size={25} style={{ marginTop: 5 }} /></div>
+                                                    {/*<div className="iconBtn" onClick={()=>this.item(data)} ><MdDelete size={25} style={{ marginTop: 5 }} /></div>*/}
+                                                    <div className="iconBtn" onClick={()=>this.handleOpen(data,index)} ><MdEdit size={25} style={{ marginTop: 5 }} /></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,22 +235,26 @@ class MyAuctionList extends Component {
                     autoScrollBodyContent={false}
                     titleStyle={{ color: 'gray',  fontFamily: 'roboto' }}
                 >
-                    <div className="EdittextBox" >
-                        <label htmlFor="title" className="labelStyle">Title:</label>
-                        <input type="text" onChange={(event) => { this.setState({ title: event.target.value }) }} className="form-control" id="title" value={this.state.title} placeholder="Title" />
-                    </div>
-                    <div className="EdittextBox">
-                        <label htmlFor="category" className="labelStyle" >Category:</label>
-                        <input type="text" onChange={(event) => { this.setState({ category: event.target.value }) }} className="form-control" id="category" value={this.state.category} placeholder="Category" />
-                    </div>
-                    <div className="EdittextBox">
-                        <label htmlFor="description" className="labelStyle" >Description:</label>
-                        <input type="text" onChange={(event) => { this.setState({ description: event.target.value }) }} className="form-control" id="description" value={this.state.description} placeholder="Description" />
-                    </div>
-                    <div className="EdittextBox">
-                        <label htmlFor="price" className="labelStyle">Price:</label>
-                        <input type="text" onChange={(event) => { this.setState({ price: event.target.value }) }} className="form-control" id="price" value={this.state.price} placeholder="Price" />
-                    </div>
+
+                    {
+                        this.state.cloudData != null && <div>
+
+                            <div className="EdittextBox" >
+                                <label htmlFor="title" className="labelStyle">Title:</label>
+                                <input type="text" onChange={(event) => { this.setState({ title: event.target.value }) }} className="form-control" id="title" value={this.state.title} placeholder="Title" />
+                            </div>
+                            <div className="EdittextBox">
+                                <label htmlFor="category" className="labelStyle" >Category:</label>
+                                <input type="text" onChange={(event) => { this.setState({ category: event.target.value }) }} className="form-control" id="category" value={this.state.category} placeholder="Category" />
+                            </div>
+                            <div className="EdittextBox">
+                                <label htmlFor="description" className="labelStyle" >Description:</label>
+                                <input type="text" onChange={(event) => { this.setState({ description: event.target.value }) }} className="form-control" id="description" value={this.state.description} placeholder="Description" />
+                            </div>
+
+                        </div>
+                    }
+
                 </Dialog>
                 <Footer />
             </div>

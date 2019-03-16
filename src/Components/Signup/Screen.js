@@ -70,7 +70,7 @@ class Signup extends Component {
                 });
                 localStorage.setItem('token',res.user.uid);
                 localStorage.setItem("userAccount",  this.state.accountAddress);
-
+                localStorage.setItem("userName", this.state.firstname + " " + this.state.lastname);
 
                 this.setState({
                     firstname: '',

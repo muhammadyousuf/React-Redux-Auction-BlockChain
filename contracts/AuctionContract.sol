@@ -105,4 +105,16 @@ contract AuctionContract {
 
       auctions[_id] = auction;
   }
+
+  function editAuction(uint _id,string memory _name) public {
+    Auction memory auction = auctions[_id];
+
+    //conditions
+    require(msg.sender == auction.beneficiary, "Only owner can edit this Auction");
+
+    //update
+    auction.auctionName = _name;
+
+    auctions[_id] = auction;
+  }
 }

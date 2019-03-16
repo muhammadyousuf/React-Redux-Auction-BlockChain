@@ -17,7 +17,7 @@ class Item extends Component {
             contractData: null,
             priceInput: 0,
             activeAccount: localStorage.getItem(ACCOUNT_ADDRESS),
-            status : LOADING
+            status: LOADING
         }
     };
 
@@ -31,13 +31,13 @@ class Item extends Component {
 
             this.setState({
                 data: dataSnapshot.val(),
-                status : HIDE
+                status: HIDE
             })
         })
 
     }
 
-    getBidInEther(){
+    getBidInEther() {
         return Number(this.state.priceInput) * VALUE;
     }
 
@@ -46,13 +46,12 @@ class Item extends Component {
             alert("Auction has ended");
             return
         }
-        else if(this.state.contractData.highestBid > this.getBidInEther()){
+        else if (this.state.contractData.highestBid > this.state.priceInput) {
             alert("Bid Must be greater than previous bid");
             return
         }
 
         this.getUserEmail(this.state.contractData.beneficiary, "Auction name " + this.state.contractData.auctionName + " has now new highest bid of ether " + this.state.priceInput + " from account " + this.state.activeAccount);
-
 
 
         this.props.web3Prop.eth.getCoinbase((err, account) => {
@@ -75,7 +74,7 @@ class Item extends Component {
 
     endAuction() {
 
-        if(this.state.contractData.highestBidder ===  this.state.contractData.beneficiary){
+        if (this.state.contractData.highestBidder === this.state.contractData.beneficiary) {
             alert("Bid Yet Not Started Yet");
             return
         }
@@ -96,9 +95,9 @@ class Item extends Component {
         tempContract.ended = true;
 
         this.setState({
-            contractData:tempContract
-        },()=>{
-            alert("Auction Ended Successfully")
+            contractData: tempContract
+        }, () => {
+            alert("Auction Ended Successfully...")
         })
 
     }
@@ -121,30 +120,30 @@ class Item extends Component {
 
     markDeliverFlag() {
 
-        if(this.state.contractData.isDelivered){
+        if (this.state.contractData.isDelivered) {
             alert("already received")
             return
         }
 
         this.getUserEmail(this.state.contractData.beneficiary, "Bidder has confirm the receiving of item of auction " + this.state.contractData.auctionName)
 
-         this.props.contractProp.deployed().then((instance) => {
-             instance.verifyDelivery(this.state.contractData.auctionId,{
-                 from:this.state.activeAccount,
-                 value:0,
-                 gas: GAS
-             })
-             alert("Thanks for updating")
+        this.props.contractProp.deployed().then((instance) => {
+            instance.verifyDelivery(this.state.contractData.auctionId, {
+                from: this.state.activeAccount,
+                value: 0,
+                gas: GAS
+            })
+            alert("Thanks for updating")
 
 
-             let tempData = this.state.contractData;
+            let tempData = this.state.contractData;
 
-             tempData.isDelivered = true;
+            tempData.isDelivered = true;
 
-             this.setState({
-                 contractData:tempData
-             })
-         })
+            this.setState({
+                contractData: tempData
+            })
+        })
     }
 
     /*
@@ -173,68 +172,30 @@ class Item extends Component {
     }
 
     renderLeftViews() {
-      /*  if(this.isOwnerLogin()){
+        if (this.isOwnerLogin()) {
             return this.renderEndAuctionView()
-        }else if(this.state.contractData.ended && !this.state.contractData.isDelivered && this.state.contractData.beneficiary != this.state.activeAccount){
-            return this.itemDeliveredView()
+        } else if (this.state.contractData.ended && !this.state.contractData.isDelivered) {
+            if (this.state.contractData.highestBidder.toLowerCase() == this.state.activeAccount.toLowerCase()) {
+                //highest bidder
+                return this.itemDeliveredView()
+            } else {
+                return this.renderEndAuctionViewForOther()
+            }
+
         }
-        else if(this.state.contractData.ended && this.state.contractData.isDelivered){
+        else if (this.state.contractData.ended && this.state.contractData.isDelivered) {
             return this.renderAlreadyEndedAuctionView()
         }
-        else{
+        else {
             return this.renderBidView()
-        }*/
+        }
 
-      return this.yousufTest()
+        // return this.yousufTest()
     }
 
-    itemDeliveredView(){
-        return (<button type="button" className="btn btn-success"
-                        onClick={()=>{
-                            if(this.state.contractData.beneficiary !== this.state.highestBidder){
-                                this.markDeliverFlag()
-                            }
+    itemDeliveredView() {
+        const {data, contractData} = this.state;
 
-                        }}
-        >Item Delivered?</button>)
-    }
-
-    isOwnerLogin(){
-        return this.state.contractData.beneficiary.toLowerCase() === this.state.activeAccount.toLowerCase()
-    }
-    renderEndAuctionView(){
-        return(
-            <button type="button" className="btn btn-success"
-                    onClick={()=>{
-                        if(this.state.contractData.beneficiary !== this.state.highestBidder){
-                            if(this.state.contractData.ended){
-                                alert("Auction already ended")
-                                return
-                            }
-                            this.endAuction()
-                        }
-
-                    }}
-            >END Auction</button>
-        )
-    }
-
-
-
-    renderBidView() {
-        return (  <div className="form-group">
-
-            <input style={{width: 150, marginLeft: '50px',marginBottom:'10px'}} type="text" className="form-control " id="usr"
-                   onChange={(event) => {
-                       this.setState({priceInput: event.target.value})
-                   }}/>
-
-            <button type="button" className="btn btn-success" onClick={()=>{this.bidAuction()}}>ADD BID</button>
-        </div>)
-    }
-
-
-    yousufTest() {
         return (  <div className="form-group bid-view">
 
 
@@ -244,32 +205,191 @@ class Item extends Component {
 
             <div className="circle-view">
 
-                <p className="bid-text" > Current bid</p>
-                <p className="bid-text-value" > $99.00</p>
+                <p className="bid-text">Highest bid</p>
+                <p className="bid-text-value">{contractData.highestBid} Ether</p>
+
+
+            </div>
+            <button style={{marginTop: 40}} type="button" className="btn btn-success bid-btn" onClick={() => {
+                if (this.state.contractData.beneficiary !== this.state.highestBidder) {
+                    this.markDeliverFlag()
+                }
+
+            }}>Item Delivered?
+            </button>
+        </div>)
+    }
+
+    isOwnerLogin() {
+        return this.state.contractData.beneficiary.toLowerCase() === this.state.activeAccount.toLowerCase()
+    }
+
+    renderEndAuctionView() {
+        const {data, contractData} = this.state;
+
+        return (  <div className="form-group bid-view">
+
+
+            <h1 className="auction-heading">Auction</h1>
+
+            <hr/>
+
+            <div className="circle-view">
+                <p className="bid-text">{contractData.beneficiary === contractData.highestBidder ? "Initial bid" : "Current bid"} </p>
+                <p className="bid-text-value">{contractData.highestBid} Ether</p>
+
+            </div>
+
+            {
+                contractData.ended ?
+                    <p className="message-style">
+                        Half ehter is transferred to your account. Wait for bidder to confirm the successfully
+                        Delivered
+                    </p>
+                    :
+                    <button style={{marginTop: 40}} type="button" className="btn btn-success bid-btn" onClick={() => {
+                        if (this.state.contractData.beneficiary !== this.state.highestBidder) {
+                            if (this.state.contractData.ended) {
+                                alert("Auction already ended")
+                                return
+                            }
+                            this.endAuction()
+                        }
+
+                    }}>END Auction</button>
+            }
+
+        </div>)
+    }
+
+    renderEndAuctionViewForOther() {
+        const {data, contractData} = this.state;
+
+        return (  <div className="form-group bid-view">
+
+
+            <h1 className="auction-heading">Auction</h1>
+
+            <hr/>
+
+            <div className="circle-view">
+                <p className="bid-text">Highest Bid</p>
+                <p className="bid-text-value">{contractData.highestBid} Ether</p>
+
+            </div>
+
+
+            <p className="message-style">
+              Auction Is Closed
+            </p>
+
+
+        </div>)
+    }
+
+
+    renderBidView() {
+        const {data, contractData} = this.state;
+
+        return (  <div className="form-group bid-view">
+
+
+            <h1 className="auction-heading">Auction</h1>
+
+            <hr/>
+
+            <div className="circle-view">
+
+                <p className="bid-text">{contractData.beneficiary === contractData.highestBidder ? "Initial bid" : "Current bid"} </p>
+                <p className="bid-text-value">{contractData.highestBid} Ether</p>
 
 
             </div>
 
 
-            <input style={{width: 180, marginLeft: '50px',marginBottom:'10px'}} type="number" className="form-control auction-bid-input" id="usr"
+            <input style={{width: 180, marginLeft: '50px', marginBottom: '10px'}} type="number"
+                   className="form-control auction-bid-input" id="usr"
                    onChange={(event) => {
                        this.setState({priceInput: event.target.value})
                    }}/>
 
-            <button type="button" className="btn btn-success bid-btn" onClick={()=>{this.bidAuction()}}>ADD BID</button>
+            <button type="button" className="btn btn-success bid-btn" onClick={() => {
+                this.bidAuction()
+            }}>ADD BID
+            </button>
+        </div>)
+    }
+
+
+    yousufTest() {
+        const {data, contractData} = this.state;
+
+        return (  <div className="form-group bid-view">
+
+
+            <h1 className="auction-heading">Auction</h1>
+
+            <hr/>
+
+            <div className="circle-view">
+
+                <p className="bid-text">{contractData.beneficiary === contractData.highestBidder ? "Initial bid" : "Current bid"} </p>
+                <p className="bid-text-value">{contractData.highestBid} Ether</p>
+
+
+            </div>
+
+
+            <input style={{width: 180, marginLeft: '50px', marginBottom: '10px'}} type="number"
+                   className="form-control auction-bid-input" id="usr"
+                   onChange={(event) => {
+                       this.setState({priceInput: event.target.value})
+                   }}/>
+
+            <button type="button" className="btn btn-success bid-btn" onClick={() => {
+                this.bidAuction()
+            }}>ADD BID
+            </button>
         </div>)
     }
 
 
     renderAlreadyEndedAuctionView() {
-        return (  <div className="form-group">
-            <button type="button" className="btn btn-success">Auction Ended</button>
+        const {data, contractData} = this.state;
+
+        return (  <div className="form-group bid-view">
+
+
+            <h1 className="auction-heading">Auction</h1>
+
+            <hr/>
+
+            <div className="circle-view">
+
+                <p className="bid-text">Highest bid</p>
+                <p className="bid-text-value">{contractData.highestBid} Ether</p>
+
+
+            </div>
+            {this.state.contractData.highestBidder.toLowerCase() == this.state.activeAccount.toLowerCase()
+                ?
+                <p className="message-style">
+                    Auction Is Closed. Thank you for showing trust on us
+                </p>
+                :
+                <p className="message-style">
+                    Auction Is Closed
+                </p>
+            }
+
+           {/* <button style={{marginTop: 40}} type="button" className="btn btn-success bid-btn">Auction Ended</button>*/}
         </div>)
+
     }
 
     render() {
         const {data, contractData} = this.state;
-        if(contractData != null){
+        if (contractData != null) {
             console.log("render ==> " + this.state.contractData.beneficiary);
             console.log("render ==> " + this.state.activeAccount);
         }
@@ -277,7 +397,7 @@ class Item extends Component {
             <div style={{overflowX: 'hidden'}}>
                 <Header {...this.props}/>
                 {
-                    data == null ?  <Loader status={this.state.status}/>: <div className="container">
+                    data == null ? <Loader status={this.state.status}/> : <div className="container">
                         <div className="row imgtoper">
                             <div className="col-md-3 col-sm-6 col-xs-6 ">
                                 <div>
@@ -302,28 +422,27 @@ class Item extends Component {
                                 <div className="detail_container">
 
 
-
-                                <div className="divItemTop">
-                                    <p className="itemHeader">Name:</p>
-                                    <p className="ItemValueStyle">{data.name}</p>
-                                </div>
-                                <div>
-                                    <p className="itemHeader">Category:</p>
-                                    <p className="ItemValueStyle">{data.category}</p>
-                                </div>
-                                <div>
+                                    <div className="divItemTop">
+                                        <p className="itemHeader">Name:</p>
+                                        <p className="ItemValueStyle">{data.name}</p>
+                                    </div>
+                                    <div>
+                                        <p className="itemHeader">Category:</p>
+                                        <p className="ItemValueStyle">{data.category}</p>
+                                    </div>
+                                    {/* <div>
                                     <p className="itemHeader">Highest Bid:</p>
                                     <p className="ItemValueStyle">{contractData.beneficiary === contractData.highestBidder ? "Bid Yet Not Started Start your bid at min " + contractData.highestBid : contractData.highestBid}
                                         Ether</p>
-                                </div>
-                                <div>
-                                    <p className="itemHeader">Start Date:</p>
-                                    <p className="ItemValueStyle">{data.date}</p>
-                                </div>
-                                <div>
-                                    <p className="itemHeader">Description:</p>
-                                    <p>{data.description}</p>
-                                </div>
+                                </div>*/}
+                                    <div>
+                                        <p className="itemHeader">Start Date:</p>
+                                        <p className="ItemValueStyle">{data.date}</p>
+                                    </div>
+                                    <div>
+                                        <p className="itemHeader">Description:</p>
+                                        <p>{data.description}</p>
+                                    </div>
                                 </div>
 
                             </div>

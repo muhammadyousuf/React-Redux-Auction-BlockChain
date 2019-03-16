@@ -6,11 +6,11 @@ import car from '../../images/car.jpg'
 import bike from '../../images/bike.jpg'
 import computer from '../../images/computer.jpg'
 import house from '../../images/house.jpg'
+import auction_icon from '../../images/auction_icon.png'
 import {VALUE} from "../../Constants";
 import Loader, {HIDE} from "../../loader";
 import {LOADING} from "../../loader";
-
-
+import 'font-awesome/css/font-awesome.min.css';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -109,9 +109,12 @@ class Dashboard extends Component {
 
 
                                     <div className="containers">
-                                        <img src={`${car}`} alt="Avatar" className="image"/>
+                                           {/* <img src={`${auction_icon}`} alt="Avatar" className="image"/>*/}
 
-
+                                        <i class="fa fa-gavel" style={{
+                                            fontSize:150,
+                                            marginTop:20
+                                        }}></i>
                                     </div>
                                     <p className="headPara">{data.auctionName}</p>
                                     <div className="listFoot ">

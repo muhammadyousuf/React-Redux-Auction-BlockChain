@@ -17,3 +17,11 @@
     background-image: url("line.png");
     background-repeat: no-repeat;
 }
+.headerTitleWelcome{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}

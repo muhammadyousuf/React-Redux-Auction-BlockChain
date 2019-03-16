@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
+import {PROJECT_NAME} from "../../Constants";
 
 
 
@@ -7,7 +8,7 @@ class Start extends Component {
     render() {
         return (
             <div className="container-fuild"   >
-                <h1 className="startHeader" >Auctionity</h1>
+                <h1 className="startHeader" >{PROJECT_NAME}</h1>
                 <h3 className="startSubHeader" >The world's largest blockchain auction house for NTFs</h3>
                 <div className="row topStyle justify-content-center"  >
                     <div className="col-md-5 col-sm-5 col-xs-6 paperDiv" >

@@ -94,3 +94,12 @@ margin-top: 10%;
     font-weight: bold;
     color: rgb(244,129,32);
 }
+
+
+.message-style{
+    text-align: center;
+    margin-top: 55px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}

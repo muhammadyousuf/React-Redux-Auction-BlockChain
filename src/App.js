@@ -23,15 +23,18 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {}
-
-          this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545')
-
-          this.web3 = new Web3(this.web3Provider)
-
-          this.auctionContract = TruffleContract(AuctionContract)
-          this.auctionContract.setProvider(this.web3Provider)
-
+        this.initWeb3()
     }
+
+    initWeb3 = () => {
+        this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545')
+
+        this.web3 = new Web3(this.web3Provider)
+
+        this.auctionContract = TruffleContract(AuctionContract)
+        this.auctionContract.setProvider(this.web3Provider)
+    };
+
 
     componentDidMount() {
         /* this.web3.eth.getCoinbase((err, account)=>{

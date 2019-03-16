@@ -44,6 +44,7 @@ class Login extends Component {
                 firebase.database().ref("users").child(res.user.uid).on('value',dataSnapshot => {
                     localStorage.setItem("token", res.user.uid);
                     localStorage.setItem("userAccount", dataSnapshot.val().accountAddress);
+                    localStorage.setItem("userName", dataSnapshot.val().firstname);
                     gotoDashboard(this.props)
                 })
 

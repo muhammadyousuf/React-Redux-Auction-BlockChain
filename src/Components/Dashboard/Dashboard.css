@@ -118,6 +118,7 @@
 .containers {
     position: relative;
     width: 100%;
+    text-align:center;
 }
 
 .image {
@@ -128,6 +129,7 @@
     transition: .5s ease;
     backface-visibility: hidden;
     border-radius: 5%;
+    background-color: #ffffff;
 }
 
 
@@ -164,4 +166,7 @@
 .EdittextBox{
     margin-top: 5px;
 
+}
+.icon_style{
+    font-size:48px;
 }
