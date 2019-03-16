@@ -241,25 +241,40 @@ class Item extends Component {
             </div>
 
             {
-                contractData.ended ?
-                    <p className="message-style">
-                        Half ehter is transferred to your account. Wait for bidder to confirm the successfully
-                        Delivered
-                    </p>
-                    :
-                    <button style={{marginTop: 40}} type="button" className="btn btn-success bid-btn" onClick={() => {
-                        if (this.state.contractData.beneficiary !== this.state.highestBidder) {
-                            if (this.state.contractData.ended) {
-                                alert("Auction already ended")
-                                return
-                            }
-                            this.endAuction()
-                        }
+                this.renderConditionalViewForOwner(contractData)
 
-                    }}>END Auction</button>
             }
 
         </div>)
+    }
+    renderEndAuctionViewWithMessage(message){
+        return( <p className="message-style">
+            {message}
+        </p>)
+    }
+
+    renderConditionalViewForOwner(contractData){
+        if(contractData.ended && !contractData.isDelivered){
+            return this.renderEndAuctionViewWithMessage("Half ehter is transferred to your account. Wait for bidder to confirm the successfully Delivered")
+        }else if(contractData.ended && contractData.isDelivered){
+            return this.renderEndAuctionViewWithMessage("Thank you for showing trust on us")
+        }else {
+            return this.renderOwnerEndAuction()
+        }
+    }
+    renderOwnerEndAuction(){
+        return (
+            <button style={{marginTop: 40}} type="button" className="btn btn-success bid-btn" onClick={() => {
+                if (this.state.contractData.beneficiary !== this.state.highestBidder) {
+                    if (this.state.contractData.ended) {
+                        alert("Auction already ended")
+                        return
+                    }
+                    this.endAuction()
+                }
+
+            }}>END Auction</button>
+        )
     }
 
     renderEndAuctionViewForOther() {

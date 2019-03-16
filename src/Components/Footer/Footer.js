@@ -16,7 +16,7 @@ class Footer extends Component {
                                     <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Groupe-3330.png"
                                          alt=""
                                          className="alignnone size-full wp-image-185 aligncenter imageIconStyle"/>
-                                    <p className="paraStyle">Trustless</p>
+                                    <p className="paraStyle">Trustful</p>
                                 </div>
                                 <div className="col-md-2 col-sm-4 col-xs-5">
                                     <img src="https://www.auctionity.com/wp-content/uploads/2018/09/groupe-33.png"

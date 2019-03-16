@@ -9,7 +9,7 @@ class Start extends Component {
         return (
             <div className="container-fuild"   >
                 <h1 className="startHeader" >{PROJECT_NAME}</h1>
-                <h3 className="startSubHeader" >The world's largest blockchain auction house for NTFs</h3>
+                <h3 className="startSubHeader" >A unique auction platform powered by blockchain technology to maintain data transparency</h3>
                 <div className="row topStyle justify-content-center"  >
                     <div className="col-md-5 col-sm-5 col-xs-6 paperDiv" >
                         <img src="https://www.auctionity.com/wp-content/uploads/2018/09/Icone-Etoile.png" alt="" className="scale-with-grid imgCenter" />
